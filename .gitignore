@@ -10,6 +10,8 @@ __pycache__/*
 
 raw_dataset/*
 !raw_dataset/_PUT_HERE_DATASET_
+!raw_dataset/Rishonim
+raw_dataset/Rishonim/raw
 
 sample_dataset/*.h5
 sample_dataset/*.tfrecords
@@ -19,5 +21,4 @@ sample_dataset/*.tfrecords
 .ipynb_checkpoints/*
 
 **/.DS_Store
-!raw_dataset/Rishonim/organized
 cos485
