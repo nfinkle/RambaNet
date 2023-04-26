@@ -37,11 +37,15 @@ def organize_data(dataset_dirname = "./sample_dataset/"):
     for metadata_fn in os.listdir(metadata_dir):
         filename, file_extension = os.path.splitext(metadata_fn)
         if file_extension != '.json':
+            print("Skipping non-json", filename)
             continue
         with open(metadata_dir+metadata_fn, 'r', encoding="utf8") as metadata_file:
             try:
                 metadata = json.load(metadata_file)
+                # if 'authors' not in metadata or not metadata.get('authors'):
+                #     print(metadata.get('title'), metadata.keys(), metadata.get('authors'))
             except:
+                print("Could not load metadata", metadata_fn)
                 continue
         bookname = filename.replace('_', ' ')
         # author = ""
@@ -117,15 +121,20 @@ def organize_data(dataset_dirname = "./sample_dataset/"):
 
 #generator function (including preprocessing -> NumPy arrays)
 #TODO: consider making preprocessing after generation. For now most compatible
-def get_sample(dataset_directory = "./sample_dataset/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "'):
+def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "'):
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
     for author_id, author_dir in authors:
+        print(author_dir)
         for book_path in author_dir.iterdir():
             with book_path.open(mode    ='r', encoding='utf8') as book_file:
                 flattened_raw_str = book_file.read()
-                # keep only letters in alphabet and remove multiple spaces
+
+            #split by paragraph
+            # samples = flattened_raw_str.split("\n")
+
+            # keep only letters in alphabet and remove multiple spaces
             filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
             filtered = re.sub(' +', ' ', filtered)
             # TODO: is it always correct to replace out-of-alphabet characters by spaces?
@@ -134,6 +143,17 @@ def get_sample(dataset_directory = "./sample_dataset/organized", input_size=1024
             #TODO: prevent cutting in the middle of words
             n = input_size
             samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
+
+            # extras = []
+            # for i in range(len(samples)):
+            #     filtered = re.sub('[^'+alphabet+']', ' ', samples[i])
+            #     samples[i] = re.sub(' +', ' ', filtered)
+            #     if len(samples[i]) > input_size:
+            #         split_up = [samples[i][i:i+input_size] for i in range(0, len(samples[i]), input_size)]
+            #         samples[i] = split_up[0]
+            #         extras.extend(split_up[1:])
+
+            # samples.extend(extras)
 
             #convert to numerical one-hot
             #TODO: consider convert to sparse representation
@@ -148,108 +168,144 @@ def get_sample(dataset_directory = "./sample_dataset/organized", input_size=1024
                 yield (sample, author_label)
 
 
-# def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "', output_filename='./sample_dataset/sample_dataset'):
-#     """ 
-#     Gets dataset directory path (which has structure as detailed behind TODO), and writes to file data as numeric NumPy ndarray in HDF5 file and TFrecord file.
+def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "', output_filename='./sample_dataset/sample_dataset'):
+    """ 
+    Gets dataset directory path (which has structure as detailed behind TODO), and writes to file data as numeric NumPy ndarray in HDF5 file and TFrecord file.
 
-#     If the output files already exists the preprocessed data is *overwritten*.
-#     """
-#     #initialize variables
-#     preprocessed_samples = np.array([], dtype=np.int8)
-#     preprocessed_labels =  np.array([], dtype=np.int8)
+    If the output files already exists the preprocessed data is *overwritten*.
+    """
+    #initialize variables
+    preprocessed_samples = np.array([], dtype=np.int8)
+    preprocessed_labels =  np.array([], dtype=np.int8)
 
-#     h5_fn = output_filename+'.h5'
-#     tfr_fn = output_filename+'.tfrecords'
+    h5_fn = output_filename+'.h5'
+    tfr_fn = output_filename+'.tfrecords'
 
-#     #initialize files dataset will be stored in
-#     with tables.open_file(h5_fn, mode='w') as h5file, tf.io.TFRecordWriter(tfr_fn) as tfwriter:
-#         typeAtom = tables.Int8Atom()
-#         print('Processing...')
-#         #iterate over authors
-#         ds_path = pathlib.Path(dataset_directory)
-#         for author_label, author_dir in enumerate(ds_path.iterdir()):
-#             #validate
-#             print('Processing ' + str(author_dir) + '...')
-#             if not author_dir.is_dir():
-#                 print('File '+str(author_dir) +' ignored (invalid location).')
-#                 continue
+    #initialize files dataset will be stored in
+    with tables.open_file(h5_fn, mode='w') as h5file, tf.io.TFRecordWriter(tfr_fn) as tfwriter:
+        typeAtom = tables.Int8Atom()
+        print('Processing...')
+        #iterate over authors
+        ds_path = pathlib.Path(dataset_directory)
+        for author_label, author_dir in enumerate(ds_path.iterdir()):
+            #validate
+            print('Processing ' + str(author_dir) + '...')
+            if not author_dir.is_dir():
+                print('File '+str(author_dir) +' ignored (invalid location).')
+                continue
 
-#             #create h5 group and table
-#             gauthor = h5file.create_group(h5file.root, 'author'+str(author_label), author_dir.name)
-#             array_c = h5file.create_earray(gauthor, 'samples', typeAtom, (0,len(alphabet), input_size), author_dir.name+" Samples")
+            #create h5 group and table
+            gauthor = h5file.create_group(h5file.root, 'author'+str(author_label), author_dir.name)
+            array_c = h5file.create_earray(gauthor, 'samples', typeAtom, (0,len(alphabet), input_size), author_dir.name+" Samples")
 
-#             # author_dict[author_label] = author_dir.name
-#             for book_path in author_dir.iterdir():
-#                 # validation check
-#                 if not book_path.is_file():
-#                     print('Directory ' + str(author_dir) + ' ignored (invalid location).')
-#                     continue
-#                 if book_path.suffix != '.json':
-#                     print('File ' + str(author_dir) + ' ignored (type should be JSON).')
-#                     continue
+            # author_dict[author_label] = author_dir.name
+            for book_path in author_dir.iterdir():
+                # validation check
+                if not book_path.is_file():
+                    print('Directory ' + str(author_dir) + ' ignored (invalid location).')
+                    continue
+                if book_path.suffix != '.json':
+                    print('File ' + str(author_dir) + ' ignored (type should be JSON).')
+                    continue
 
-#                 # load JSON data
-#                 with book_path.open(mode='r', encoding='utf8') as book_file:
-#                     try:
-#                         book_raw_text = json.load(book_file)['text']
-#                         # book_raw_text = book_raw_data
-#                     except:
-#                         print('File '+str(author_dir) +
-#                                     ' ignored (impossible to read JSON).')
-#                         continue
+                # load JSON data
+                with book_path.open(mode='r', encoding='utf8') as book_file:
+                    try:
+                        book_raw_text = json.load(book_file)['text']
+                        # book_raw_text = book_raw_data
+                    except:
+                        print('File '+str(author_dir) +
+                                    ' ignored (impossible to read JSON).')
+                        continue
 
-#                 # flatten
-#                 if isinstance(book_raw_text, list):  # no internal separation of text
-#                     flattened_raw_lst = list(flatten(book_raw_text))
-#                 elif isinstance(book_raw_text, dict):# internal separation of text - dict of dicts
-#                     tmp = []
-#                     for d in book_raw_text.values():
-#                         if isinstance(d, dict):
-#                             tmp.extend(list(d.values()))
-#                         elif isinstance(d, list):
-#                             tmp.extend(d)
-#                     flattened_raw_lst = list(flatten(tmp))
-#                 else:
-#                     raise ValueError(str(book_path)+ ': Could not parse.')
+                # flatten
+                if isinstance(book_raw_text, list):  # no internal separation of text
+                    flattened_raw_lst = list(flatten(book_raw_text))
+                elif isinstance(book_raw_text, dict):# internal separation of text - dict of dicts
+                    tmp = []
+                    for d in book_raw_text.values():
+                        if isinstance(d, dict):
+                            tmp.extend(list(d.values()))
+                        elif isinstance(d, list):
+                            tmp.extend(d)
+                    flattened_raw_lst = list(flatten(tmp))
+                else:
+                    raise ValueError(str(book_path)+ ': Could not parse.')
 
-#                 # ensure file does not have different structure from expected
-#                 assert(all(isinstance(x, str) for x in flattened_raw_lst))
-#                 # TODO: check manually all is well
+                # ensure file does not have different structure from expected
+                assert(all(isinstance(x, str) for x in flattened_raw_lst))
+                # TODO: check manually all is well
 
-#                 # concatenate
-#                 flattened_raw_str = ''.join(flattened_raw_lst)
+                # concatenate
+                flattened_raw_str = ''.join(flattened_raw_lst)
 
-#                 # TODO: handle single quote characters
+                # TODO: handle single quote characters
 
-#                 # keep only letters in alphabet and remove multiple spaces
-#                 filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
-#                 filtered = re.sub(' +', ' ', filtered)
-#                 # TODO: is it always correct to replace out-of-alphabet characters by spaces?
+                # keep only letters in alphabet and remove multiple spaces
+                filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
+                filtered = re.sub(' +', ' ', filtered)
+                # TODO: is it always correct to replace out-of-alphabet characters by spaces?
 
-#                 # split to samples
-#                 #TODO: prevent cutting in the middle of words
-#                 n = input_size
-#                 samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
+                # split to samples
+                #TODO: prevent cutting in the middle of words
+                n = input_size
+                samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
 
-#                 #convert to numerical one-hot
-#                 samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet) for sample in samples[0:-1]], axis=0)
-#                 #pad last sample and add it to 3d array
-#                 lastsample_onehot = str2onehot(samples[-1], alphabet)
-#                 lastsample_onehot_padded = np.zeros_like(samples_onehot_minus1[-1,:,:], dtype=np.int8)
-#                 lastsample_onehot_padded[0:lastsample_onehot.shape[0], 0:lastsample_onehot.shape[1]] = lastsample_onehot
-#                 samples_onehot = np.concatenate((samples_onehot_minus1, lastsample_onehot_padded[np.newaxis,:,:]))
+                #convert to numerical one-hot
+                samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet) for sample in samples[0:-1]], axis=0)
+                #pad last sample and add it to 3d array
+                lastsample_onehot = str2onehot(samples[-1], alphabet)
+                lastsample_onehot_padded = np.zeros_like(samples_onehot_minus1[-1,:,:], dtype=np.int8)
+                lastsample_onehot_padded[0:lastsample_onehot.shape[0], 0:lastsample_onehot.shape[1]] = lastsample_onehot
+                samples_onehot = np.concatenate((samples_onehot_minus1, lastsample_onehot_padded[np.newaxis,:,:]))
 
-#                 ## write to file
-#                 #write to h5
-#                 array_c.append(samples_onehot)
-#                 #write to tfrecord
-#                 for text_arr in samples_onehot:
-#                     tf_example = text_example(text_arr, author_label)
-#                     tfwriter.write(tf_example.SerializeToString())
-#             h5file.flush()
-#             tfwriter.flush()
+                ## write to file
+                #write to h5
+                array_c.append(samples_onehot)
+                #write to tfrecord
+                for text_arr in samples_onehot:
+                    tf_example = text_example(text_arr, author_label)
+                    tfwriter.write(tf_example.SerializeToString())
+            h5file.flush()
+            tfwriter.flush()
 
 
 # organize_data() #DEBUG
 
 # preprocess_data('./sample_dataset/organized') #DEBUG!
+
+def move_books_to_main(main_dir="/Users/nathan/Library/CloudStorage/Dropbox/_School/College/10_-_Masters_Spring/COS485/Final Project/RambaNet/raw_dataset"):
+    import shutil
+    def traverse_cur_dir(cur_dir, prefix):
+        if not os.path.isdir(prefix + cur_dir):
+            print(prefix + cur_dir, "not a directory")
+            return
+        if "Hebrew" in os.listdir(prefix + cur_dir):
+
+            shutil.move(prefix+cur_dir, main_dir+ "/" + cur_dir.split("/")[-1])
+        else:
+            for f in os.listdir(prefix + cur_dir):
+                traverse_cur_dir(f, prefix + cur_dir +"/")
+    
+    names  = main_dir.split("/")
+    traverse_cur_dir(names[-1], "/".join(names[:-1]) + "/")
+
+def linebreaks_at_colons_and_breakup_html(organized_folder):
+    import glob
+    import re
+    for filename in glob.glob(organized_folder + "/*/*.txt"):
+        filedata = None
+        with open(filename, 'r') as file:
+            filedata = file.read()
+
+        # Replace the target string
+        filedata = re.sub(r"<.*>", "", filedata)
+        filedata = re.sub(r"\(.*\)", "", filedata)
+        filedata = filedata.split(":")
+
+        # Write the file out again
+        with open(filename, 'w') as file:
+            file.write('\n'.join(filedata))
+
+
+    

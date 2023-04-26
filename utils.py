@@ -5,7 +5,7 @@ import numpy as np
 # flatten list/dict of string
 def flatten(l):
     for el in l:
-        if isinstance(el, collections.Iterable) and not isinstance(el, (str, bytes)):
+        if isinstance(el, collections.abc.Iterable) and not isinstance(el, (str, bytes)):
             yield from flatten(el)
         else:
             yield el
@@ -16,7 +16,7 @@ def str2onehot(sample, alphabet):  # idxs is list of integers
     #convert to indexes
     idxs = [alphabet.index(c) for c in sample]
     #convert to one-hot
-    idxs_arr = np.array(idxs)
+    idxs_arr = np.array(idxs, dtype=int)
     length = len(alphabet)
     b = np.zeros((idxs_arr.size, length))
     b[np.arange(idxs_arr.size), idxs_arr] = 1

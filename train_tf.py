@@ -3,18 +3,21 @@ from tensorflow import keras
 from preprocess import get_sample
 import tensorflow as tf
 
-ds_sefaria = tf.data.Dataset.from_generator(get_sample, args=[], output_types=(tf.int8, tf.int8), output_shapes = ( [29, 1024], [4] ) )
+OUTPUTS = 15
+
+ds_sefaria = tf.data.Dataset.from_generator(get_sample, args=[], output_types=(tf.int8, tf.int8), output_shapes = ( [29, 1024], [OUTPUTS] ) )
 #TODO: shapes and arguments should be parametric
+# print(len(list(ds_sefaria)))
 
 inputs = keras.Input(shape=(29, 1024), name='characters')
 x = keras.layers.Flatten()(inputs) 
 x = keras.layers.Dense(64, activation='relu', name='dense_1')(x)
 x = keras.layers.Dense(64, activation='relu', name='dense_2')(x)
-outputs = keras.layers.Dense(4, name='predictions')(x)
+outputs = keras.layers.Dense(OUTPUTS, name='predictions')(x)
 
 model = keras.Model(inputs=inputs, outputs=outputs)
 
-DATASET_SIZE = 8377
+DATASET_SIZE = len(list(ds_sefaria))
 train_size = int(0.7 * DATASET_SIZE)
 val_size = int(0.15 * DATASET_SIZE)
 test_size = int(0.15 * DATASET_SIZE)
