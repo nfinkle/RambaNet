@@ -128,21 +128,27 @@ def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_siz
     for author_id, author_dir in authors:
         print(author_dir)
         for book_path in author_dir.iterdir():
-            with book_path.open(mode    ='r', encoding='utf8') as book_file:
-                flattened_raw_str = book_file.read()
+            samples_onehot = make_samples(input_size, alphabet, book_path)
+            author_label = one_hot_matrix[:,author_id]
+            for sample in samples_onehot:
+                yield (sample, author_label)
+
+def make_samples(input_size, alphabet, book_path):
+    with book_path.open(mode    ='r', encoding='utf8') as book_file:
+        flattened_raw_str = book_file.read()
 
             #split by paragraph
             # samples = flattened_raw_str.split("\n")
 
             # keep only letters in alphabet and remove multiple spaces
-            filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
-            filtered = re.sub(' +', ' ', filtered)
+    filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
+    filtered = re.sub(' +', ' ', filtered)
             # TODO: is it always correct to replace out-of-alphabet characters by spaces?
 
             # split to samples
             #TODO: prevent cutting in the middle of words
-            n = input_size
-            samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
+    n = input_size
+    samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
 
             # extras = []
             # for i in range(len(samples)):
@@ -157,15 +163,33 @@ def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_siz
 
             #convert to numerical one-hot
             #TODO: consider convert to sparse representation
-            samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet) for sample in samples[0:-1]], axis=0)
+    samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet) for sample in samples[0:-1]], axis=0)
             #pad last sample and add it to 3d array
-            lastsample_onehot = str2onehot(samples[-1], alphabet)
-            lastsample_onehot_padded = np.zeros_like(samples_onehot_minus1[-1,:,:], dtype=np.int8)
-            lastsample_onehot_padded[0:lastsample_onehot.shape[0], 0:lastsample_onehot.shape[1]] = lastsample_onehot
-            samples_onehot = np.concatenate((samples_onehot_minus1, lastsample_onehot_padded[np.newaxis,:,:]))
+    lastsample_onehot = str2onehot(samples[-1], alphabet)
+    lastsample_onehot_padded = np.zeros_like(samples_onehot_minus1[-1,:,:], dtype=np.int8)
+    lastsample_onehot_padded[0:lastsample_onehot.shape[0], 0:lastsample_onehot.shape[1]] = lastsample_onehot
+    samples_onehot = np.concatenate((samples_onehot_minus1, lastsample_onehot_padded[np.newaxis,:,:]))
+    return samples_onehot
+
+
+def parse_dataset(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "'):
+    ds_path = pathlib.Path(dataset_directory)
+    authors = list(enumerate(ds_path.iterdir()))
+    one_hot_matrix = np.eye(len(authors), dtype='int8')
+    examples = np.zeros((1, len(alphabet), input_size))
+    labels = np.zeros((1, len(authors)))
+
+    for author_id, author_dir in authors:
+        print(author_dir)
+        for book_path in author_dir.iterdir():
+            samples_onehot = make_samples(input_size, alphabet, book_path)
             author_label = one_hot_matrix[:,author_id]
-            for sample in samples_onehot:
-                yield (sample, author_label)
+            examples = np.concatenate((examples, samples_onehot))
+            author_label = np.repeat(author_label[None, :], len(samples_onehot), axis=0)
+            labels = np.concatenate((labels, author_label))
+
+    return examples, labels
+
 
 
 def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "', output_filename='./sample_dataset/sample_dataset'):
