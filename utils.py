@@ -20,7 +20,7 @@ def str2onehot(sample, alphabet):  # idxs is list of integers
     length = len(alphabet)
     b = np.zeros((idxs_arr.size, length))
     b[np.arange(idxs_arr.size), idxs_arr] = 1
-    return b.T.astype(np.int8)
+    return b.astype(np.int8)
 
 ## Functions to write/read to/from TFrecord files ##
 def text_example(text, label):
@@ -63,3 +63,14 @@ def parse_text_example(example_proto):
     # text_tensor = tf.convert_to_tensor(text)
     # text_str = tf.io.serialize_tensor(text_tensor)
     # return tf.train.Example(features=tf.train.Features(feature=feature))
+
+
+def translate_from_onehot(onehot, alphabet):
+    assert len(onehot.shape) == 2
+    assert onehot.shape[1] == len(alphabet)
+    s = [""] * onehot.shape[0]
+    for i in range(onehot.shape[0]):
+        index = tf.argmax(onehot[i])
+        s[i] = alphabet[index]
+    return "".join(s)
+

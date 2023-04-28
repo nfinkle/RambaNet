@@ -141,7 +141,7 @@ def make_samples(input_size, alphabet, book_path):
             # samples = flattened_raw_str.split("\n")
 
             # keep only letters in alphabet and remove multiple spaces
-    filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
+    filtered = re.sub('[^'+alphabet+']', '', flattened_raw_str)
     filtered = re.sub(' +', ' ', filtered)
             # TODO: is it always correct to replace out-of-alphabet characters by spaces?
 
@@ -176,7 +176,7 @@ def parse_dataset(dataset_directory = "./raw_dataset/Rishonim/organized", input_
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
-    examples = np.zeros((1, len(alphabet), input_size))
+    examples = np.zeros((1, input_size, len(alphabet)))
     labels = np.zeros((1, len(authors)))
 
     for author_id, author_dir in authors:
@@ -317,6 +317,7 @@ def move_books_to_main(main_dir="/Users/nathan/Library/CloudStorage/Dropbox/_Sch
 def linebreaks_at_colons_and_breakup_html(organized_folder):
     import glob
     import re
+    pattern = re.compile(r'[\u05B0-\u05BD\u05BF\u05C1\u05C2]')
     for filename in glob.glob(organized_folder + "/*/*.txt"):
         filedata = None
         with open(filename, 'r') as file:
@@ -325,6 +326,9 @@ def linebreaks_at_colons_and_breakup_html(organized_folder):
         # Replace the target string
         filedata = re.sub(r"<.*>", "", filedata)
         filedata = re.sub(r"\(.*\)", "", filedata)
+    # Remove all matches from the string and return the result
+        filedata = re.sub(pattern, '', filedata)
+
         filedata = filedata.split(":")
 
         # Write the file out again
