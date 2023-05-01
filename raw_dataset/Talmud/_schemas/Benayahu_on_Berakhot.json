@@ -1,0 +1,105 @@
+{
+    "title": "Benayahu on Berakhot",
+    "categories": [
+        "Talmud",
+        "Bavli",
+        "Acharonim on Talmud",
+        "Benayahu"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Talmud",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Daf",
+            "Line"
+        ],
+        "lengths": [
+            127,
+            66
+        ],
+        "referenceableSections": [
+            true,
+            true
+        ],
+        "isSegmentLevelDiburHamatchil": true,
+        "diburHamatchilRegexes": [
+            "^<b>(.+?)</b>",
+            "^(.+?)[\\-–]"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "primary": true,
+                "text": "בניהו על ברכות"
+            },
+            {
+                "text": "Benayahu on Berakhot",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Benayahu on Berakhot",
+        "heTitle": "בניהו על ברכות",
+        "heSectionNames": [
+            "דף",
+            "שורה"
+        ],
+        "key": "Benayahu on Berakhot"
+    },
+    "authors": [
+        {
+            "en": "Yosef Hayyim",
+            "he": "יוסף חיים",
+            "slug": "yosef-hayyim"
+        }
+    ],
+    "enDesc": "The shorter of Rabbi Yosef Hayyim (Ben Ish Chai)'s two works on aggadah, it offers analytic as well as kabbalistic interpretations of the Talmud's narrative sections.",
+    "pubDate": "1905",
+    "compDate": "1875",
+    "compPlace": "Baghdad, Iraq",
+    "pubPlace": "Jerusalem",
+    "errorMargin": "20",
+    "era": "AH",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Berakhot",
+            "he": "ברכות"
+        }
+    ],
+    "base_text_mapping": "",
+    "collective_title": {
+        "en": "Benayahu",
+        "he": "בניהו"
+    },
+    "heTitle": "בניהו על ברכות",
+    "titleVariants": [
+        "Benayahu on Berakhot"
+    ],
+    "heTitleVariants": [
+        "בניהו על ברכות"
+    ],
+    "sectionNames": [
+        "Daf",
+        "Line"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "תלמוד",
+        "בבלי",
+        "אחרונים על התלמוד",
+        "בניהו"
+    ],
+    "compDateString": {
+        "en": " (c.1855  - c.1895 CE)",
+        "he": " (1855 - 1895 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Baghdad, Iraq",
+        "he": "בגדד, עירק"
+    }
+}

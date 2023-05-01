@@ -1,0 +1,135 @@
+{
+    "title": "Marganita Tava on Sefer HaMitzvot",
+    "categories": [
+        "Halakhah",
+        "Sifrei Mitzvot",
+        "Sefer HaMitzvot",
+        "Commentary"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Siman"
+                ],
+                "sectionNames": [
+                    "Siman"
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "הקדמה",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Introduction",
+                        "primary": true
+                    }
+                ],
+                "title": "Introduction",
+                "heTitle": "הקדמה",
+                "heSectionNames": [
+                    "סימן"
+                ],
+                "key": "Introduction"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Integer",
+                    "Siman",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Shoresh",
+                    "Siman",
+                    "Parshanut"
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "שורשים",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Shorashim",
+                        "primary": true
+                    }
+                ],
+                "title": "Shorashim",
+                "heTitle": "שורשים",
+                "heSectionNames": [
+                    "שורש",
+                    "סימן",
+                    "פרשנות"
+                ],
+                "key": "Shorashim"
+            }
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "מרגניתא טבא על ספר המצוות",
+                "primary": true
+            },
+            {
+                "text": "Marganita Tava on Sefer HaMitzvot",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Marganita Tava on Sefer HaMitzvot",
+        "heTitle": "מרגניתא טבא על ספר המצוות",
+        "key": "Marganita Tava on Sefer HaMitzvot"
+    },
+    "authors": [
+        {
+            "en": "Aryeh Leib Zitel Segal Horowitz",
+            "he": "אריה ליב זיטל סגל הורוביץ",
+            "slug": "aryeh-leib-zitel-segal-horowitz"
+        }
+    ],
+    "enDesc": "",
+    "compDate": "1830-44",
+    "compPlace": "Minsk",
+    "pubPlace": "Frankfurt am Main, Germany",
+    "era": "AH",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Sefer HaMitzvot",
+            "he": "ספר המצוות"
+        }
+    ],
+    "base_text_mapping": null,
+    "collective_title": {
+        "en": "Marganita Tava",
+        "he": "מרגניתא טבא"
+    },
+    "heTitle": "מרגניתא טבא על ספר המצוות",
+    "titleVariants": [
+        "Marganita Tava on Sefer HaMitzvot"
+    ],
+    "heTitleVariants": [
+        "מרגניתא טבא על ספר המצוות"
+    ],
+    "heCategories": [
+        "הלכה",
+        "ספרי מצוות",
+        "ספר המצוות",
+        "מפרשים"
+    ],
+    "compDateString": {
+        "en": " (1830  - 44 CE)",
+        "he": " (1830 - 44 לספירה)"
+    },
+    "compPlaceString": {
+        "en": "Minsk",
+        "he": "מינסק"
+    }
+}

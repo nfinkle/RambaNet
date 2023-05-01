@@ -1,0 +1,184 @@
+{
+    "title": "Pirkei DeRabbi Eliezer",
+    "categories": [
+        "Midrash",
+        "Aggadah"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Perek",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Paragraph"
+        ],
+        "match_templates": [
+            {
+                "term_slugs": [
+                    "pirkei-derabbi-eliezer"
+                ]
+            }
+        ],
+        "lengths": [
+            54,
+            656
+        ],
+        "referenceableSections": [
+            true,
+            false
+        ],
+        "titles": [
+            {
+                "lang": "en",
+                "text": "Baraita de-Rabbi Eliezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirkei Derabbi Eliezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirkei D'Rabbi Eliezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirke de-Rabbi Eliezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirke Rabbi Eliezer ben Hyrcanus"
+            },
+            {
+                "lang": "en",
+                "text": "Haggadah de-Rabbi Eliezer ben Hyrcanus"
+            },
+            {
+                "lang": "en",
+                "text": "Pirke Rabbi Eliezer ha-Gadol"
+            },
+            {
+                "lang": "en",
+                "text": "Pirkei Derabi Eliezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirke d'Rabbi Eliezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirké d’R. El."
+            },
+            {
+                "lang": "en",
+                "text": "Pirqei de-Rabbi Eli’ezer"
+            },
+            {
+                "lang": "en",
+                "text": "Pirqei de-Rabbi Eliezer"
+            },
+            {
+                "lang": "he",
+                "text": "פרקי דר\"א"
+            },
+            {
+                "lang": "he",
+                "text": "פרדר\"א"
+            },
+            {
+                "lang": "he",
+                "text": "פרקי דר' אליעזר"
+            },
+            {
+                "text": "פרקי דר״א",
+                "lang": "he"
+            },
+            {
+                "text": "פרקי דר”א",
+                "lang": "he"
+            },
+            {
+                "text": "פרדר״א",
+                "lang": "he"
+            },
+            {
+                "text": "פרדר”א",
+                "lang": "he"
+            },
+            {
+                "text": "פרקי דרבי אליעזר",
+                "lang": "he",
+                "primary": true
+            },
+            {
+                "text": "Pirkei DeRabbi Eliezer",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Pirkei DeRabbi Eliezer",
+        "heTitle": "פרקי דרבי אליעזר",
+        "heSectionNames": [
+            "פרק",
+            "פסקה"
+        ],
+        "key": "Pirkei DeRabbi Eliezer"
+    },
+    "authors": [],
+    "enDesc": "Pirke d’Rabbi Eliezer (“Chapters of Rabbi Eliezer”) is a midrash that retells and expands upon the stories of the Torah, from the creation of the world through the story of Miriam’s leprosy. It incorporates discussion on topics like redemption, Messiah, and calculating the end of days. Traditionally considered to have been authored by Rabbi Eliezer ben Hyrcanus in the time period of the Mishnah (the first and second centuries CE), the work was likely edited in the eighth or ninth century.",
+    "heDesc": "",
+    "enShortDesc": "Medieval midrash that retells and expands upon the stories of the Torah from creation through Miriam.",
+    "heShortDesc": "מדרש מימי הביניים המשכתב ומרחיב את סיפורי התורה מבריאת העולם ועד תקופת מרים הנביאה.",
+    "pubDate": "1514",
+    "compDate": "830",
+    "compPlace": "Talmudic Israel/Babylon",
+    "pubPlace": "Istanbul",
+    "errorMargin": "200",
+    "era": "GN",
+    "is_cited": true,
+    "heTitle": "פרקי דרבי אליעזר",
+    "titleVariants": [
+        "Baraita de-Rabbi Eliezer",
+        "Pirkei Derabbi Eliezer",
+        "Pirkei D'Rabbi Eliezer",
+        "Pirke de-Rabbi Eliezer",
+        "Pirke Rabbi Eliezer ben Hyrcanus",
+        "Haggadah de-Rabbi Eliezer ben Hyrcanus",
+        "Pirke Rabbi Eliezer ha-Gadol",
+        "Pirkei Derabi Eliezer",
+        "Pirke d'Rabbi Eliezer",
+        "Pirké d’R. El.",
+        "Pirqei de-Rabbi Eli’ezer",
+        "Pirqei de-Rabbi Eliezer",
+        "Pirkei DeRabbi Eliezer"
+    ],
+    "heTitleVariants": [
+        "פרקי דר\"א",
+        "פרדר\"א",
+        "פרקי דר' אליעזר",
+        "פרקי דר״א",
+        "פרקי דר”א",
+        "פרדר״א",
+        "פרדר”א",
+        "פרקי דרבי אליעזר"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "מדרש",
+        "אגדה"
+    ],
+    "compDateString": {
+        "en": " (c.630  - c.1030 CE)",
+        "he": " (630 - 1030 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Talmudic Israel/Babylon",
+        "he": "ישראל / בבל התלמודית"
+    }
+}

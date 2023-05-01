@@ -1,0 +1,78 @@
+{
+    "title": "Seder Ma'amadot",
+    "categories": [
+        "Liturgy"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Integer",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Day of Week",
+            "Section"
+        ],
+        "titles": [
+            {
+                "lang": "en",
+                "text": "Ma'amadot"
+            },
+            {
+                "lang": "he",
+                "text": "סדר מעמדות",
+                "primary": true
+            },
+            {
+                "lang": "he",
+                "text": "מעמדות"
+            },
+            {
+                "text": "Seder Ma'amadot",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Seder Ma'amadot",
+        "heTitle": "סדר מעמדות",
+        "heSectionNames": [
+            "",
+            "חלק"
+        ],
+        "key": "Seder Ma'amadot"
+    },
+    "authors": [],
+    "enDesc": "Seder Ma'amadot is a collection of verses from Tanakh, Mishnah, and Talmud that are to be recited each day of the week. The scriptural texts are followed by prayers of supplication.",
+    "enShortDesc": "Collections of verses from Tanakh and rabbinic literature, followed by prayers of supplication, meant to be recited each day of the week.",
+    "heShortDesc": "אוסף פסוקי התורה ומקורות חז\"ל שמתלווים אליו קטעי תפילה ותחנונים המכוונים להיאמר בכל יום בשבוע.",
+    "compDate": "1030",
+    "compPlace": "Middle-Age France",
+    "errorMargin": "30",
+    "era": "RI",
+    "heTitle": "סדר מעמדות",
+    "titleVariants": [
+        "Ma'amadot",
+        "Seder Ma'amadot"
+    ],
+    "heTitleVariants": [
+        "סדר מעמדות",
+        "מעמדות"
+    ],
+    "sectionNames": [
+        "Day of Week",
+        "Section"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "סדר התפילה"
+    ],
+    "compDateString": {
+        "en": " (c.1000  - c.1060 CE)",
+        "he": " (1000 - 1060 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Middle-Age France",
+        "he": "צרפת של ימי הביניים"
+    }
+}

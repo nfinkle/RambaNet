@@ -1,0 +1,79 @@
+{
+    "title": "Pele Yoetz",
+    "categories": [
+        "Musar",
+        "Acharonim"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Perek",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "פלא יועץ",
+                "primary": true
+            },
+            {
+                "text": "Pele Yoetz",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Pele Yoetz",
+        "heTitle": "פלא יועץ",
+        "heSectionNames": [
+            "פרק",
+            "פסקה"
+        ],
+        "key": "Pele Yoetz"
+    },
+    "authors": [
+        {
+            "en": "Eliezer Papo",
+            "he": "אליעזר פאפו",
+            "slug": "eliezer-papo"
+        }
+    ],
+    "enDesc": "Pele Yoetz is a book of Jewish Musar literature (Ethics). It is not limited to abstract ethical precepts ‎and esoteric concepts; but rather it encompasses all aspects and phases of day-to-day Jewish ‎living, the ritual as well as the ethical, the mundane as well as the sublime. The book offers advice ‎on human interrelationships such as between parent and child, husband and wife, employer and ‎employee. It speaks to the heart as well as the mind. It is comprised of short chapters organized according to the Hebrew ‎alphabet.‎",
+    "heDesc": "ספר מוסר שעוסק במגוון נושאים הקשורים לחיי היום-יום היהודיים, בנוי מפרקים קצרים לפי סדר האלף-בית.",
+    "enShortDesc": "19th-century accessible work on fundamental ethical principles, organized alphabetically.",
+    "heShortDesc": "חיבור נגיש מן המאה ה-19 על עקרונות מוסר בסיסיים, בסדר אלפביתי.",
+    "pubDate": "1824",
+    "compDate": "1819",
+    "compPlace": "Silistra, Bulgaria",
+    "pubPlace": "Istanbul",
+    "errorMargin": "4",
+    "era": "AH",
+    "heTitle": "פלא יועץ",
+    "titleVariants": [
+        "Pele Yoetz"
+    ],
+    "heTitleVariants": [
+        "פלא יועץ"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "ספרי מוסר",
+        "אחרונים"
+    ],
+    "compDateString": {
+        "en": " (c.1815  - c.1823 CE)",
+        "he": " (1815 - 1823 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Silistra, Bulgaria",
+        "he": "סיליסטרה, בולגריה"
+    }
+}

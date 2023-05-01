@@ -1,0 +1,114 @@
+{
+    "title": "Malbim on Joshua",
+    "categories": [
+        "Tanakh",
+        "Acharonim on Tanakh",
+        "Malbim",
+        "Prophets"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 3,
+        "addressTypes": [
+            "Perek",
+            "Pasuk",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Verse",
+            "Comment"
+        ],
+        "match_templates": [
+            {
+                "term_slugs": [
+                    "malbim",
+                    "joshua"
+                ]
+            }
+        ],
+        "lengths": [
+            24,
+            376,
+            630
+        ],
+        "isSegmentLevelDiburHamatchil": true,
+        "diburHamatchilRegexes": [
+            "^<b>(.+?)</b>",
+            "^(.+?)[\\-–]"
+        ],
+        "titles": [
+            {
+                "lang": "en",
+                "text": "Malbim Literary Commantary on Joshua"
+            },
+            {
+                "primary": true,
+                "lang": "he",
+                "text": "מלבי\"ם על יהושע"
+            },
+            {
+                "text": "Malbim on Joshua",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Malbim on Joshua",
+        "heTitle": "מלבי\"ם על יהושע",
+        "heSectionNames": [
+            "פרק",
+            "פסוק",
+            "פירוש"
+        ],
+        "key": "Malbim on Joshua"
+    },
+    "authors": [
+        {
+            "en": "Malbim",
+            "he": "מלבי\"ם",
+            "slug": "malbim"
+        }
+    ],
+    "enDesc": "Written by Rabbi Meir Leibush ben Yehiel Michel Wisser (Malbim), a trademark of the his commentary is his belief that there are no synonyms or repetition in the Tanakh. Each word represents a different idea or concept. Another important facet is his interest in connecting the written word to its rabbinic interpretation.",
+    "pubDate": "1874",
+    "compDate": "1859",
+    "pubPlace": "Warsaw",
+    "errorMargin": "15",
+    "era": "AH",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Joshua",
+            "he": "יהושע"
+        }
+    ],
+    "base_text_mapping": "many_to_one",
+    "collective_title": {
+        "en": "Malbim",
+        "he": "מלבי\"ם"
+    },
+    "heTitle": "מלבי\"ם על יהושע",
+    "titleVariants": [
+        "Malbim Literary Commantary on Joshua",
+        "Malbim on Joshua"
+    ],
+    "heTitleVariants": [
+        "מלבי\"ם על יהושע"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Verse",
+        "Comment"
+    ],
+    "depth": 3,
+    "heCategories": [
+        "תנ\"ך",
+        "אחרונים על התנ״ך",
+        "מלבי\"ם",
+        "נביאים"
+    ],
+    "compDateString": {
+        "en": " (c.1844  - c.1874 CE)",
+        "he": " (1844 - 1874 לספירה בקירוב)"
+    }
+}

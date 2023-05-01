@@ -1,0 +1,78 @@
+{
+    "title": "Pe'er HaDor Teshuvot HaRambam",
+    "categories": [
+        "Responsa",
+        "Rishonim",
+        "Rambam"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Integer",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Teshuva",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "פאר הדור תשובות הרמב\"ם",
+                "primary": true
+            },
+            {
+                "text": "Pe'er HaDor Teshuvot HaRambam",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Pe'er HaDor Teshuvot HaRambam",
+        "heTitle": "פאר הדור תשובות הרמב\"ם",
+        "heSectionNames": [
+            "",
+            "פסקה"
+        ],
+        "key": "Pe'er HaDor Teshuvot HaRambam"
+    },
+    "authors": [
+        {
+            "en": "Rambam",
+            "he": "רמב\"ם",
+            "slug": "rambam"
+        }
+    ],
+    "enDesc": "Responsa of Maimonides.",
+    "pubDate": "1765",
+    "compDate": "1180",
+    "compPlace": "Fustat, Egypt",
+    "pubPlace": "Amsterdam",
+    "errorMargin": "25",
+    "era": "RI",
+    "heTitle": "פאר הדור תשובות הרמב\"ם",
+    "titleVariants": [
+        "Pe'er HaDor Teshuvot HaRambam"
+    ],
+    "heTitleVariants": [
+        "פאר הדור תשובות הרמב\"ם"
+    ],
+    "sectionNames": [
+        "Teshuva",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "שו\"ת",
+        "ראשונים",
+        "רמב\"ם"
+    ],
+    "compDateString": {
+        "en": " (c.1155  - c.1205 CE)",
+        "he": " (1155 - 1205 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Fustat, Egypt",
+        "he": "פוסטאט, מצרים"
+    }
+}

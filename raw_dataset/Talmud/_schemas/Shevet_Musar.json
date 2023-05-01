@@ -1,0 +1,160 @@
+{
+    "title": "Shevet Musar",
+    "categories": [
+        "Musar",
+        "Acharonim"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Title",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "שער",
+                        "primary": true
+                    }
+                ],
+                "title": "Title",
+                "heTitle": "שער",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Title"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Author's Preface",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "הקדמת המחבר",
+                        "primary": true
+                    }
+                ],
+                "title": "Author's Preface",
+                "heTitle": "הקדמת המחבר",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Author's Preface"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Index",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "מפתחות הפרקים",
+                        "primary": true
+                    }
+                ],
+                "title": "Index",
+                "heTitle": "מפתחות הפרקים",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Index"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Perek",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph"
+                ],
+                "default": true,
+                "title": "",
+                "heTitle": "",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה"
+                ],
+                "key": "default"
+            }
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "שבט מוסר",
+                "primary": true
+            },
+            {
+                "text": "Shevet Musar",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Shevet Musar",
+        "heTitle": "שבט מוסר",
+        "key": "Shevet Musar"
+    },
+    "authors": [
+        {
+            "en": "Eliyahu HaKohen Ha'Itamri",
+            "he": "אליהו הכהן האיתמרי",
+            "slug": "eliyahu-hakohen-haitamri"
+        }
+    ],
+    "enDesc": "Ethical work divided into fifty-two chapters corresponding to the weeks of the year. The book, which gained much popularity, has been published in many editions and translated into several languages since it first appeared in 1712.",
+    "heDesc": "חיבור מוסרי המחולק לחמישים ושניים פרקים המקבילים לשבועי השנה. הוא זכה לפופולאריות רבה, נדפס במהדורות רבות ותורגם לכמה שפות מאז הופיע לראשונה בשנת 1712.",
+    "enShortDesc": "18th-century accessible work divided into 52 chapters corresponding to the weeks of the year.",
+    "heShortDesc": "חיבור מן המאה ה-18 המחולק ל-52 פרקים כנגד מספר השבועות בשנה.",
+    "pubDate": "1712",
+    "compDate": "1712",
+    "pubPlace": "Constantinople",
+    "era": "AH",
+    "heTitle": "שבט מוסר",
+    "titleVariants": [
+        "Shevet Musar"
+    ],
+    "heTitleVariants": [
+        "שבט מוסר"
+    ],
+    "heCategories": [
+        "ספרי מוסר",
+        "אחרונים"
+    ],
+    "compDateString": {
+        "en": " (1712 CE)",
+        "he": " (1712 לספירה)"
+    }
+}

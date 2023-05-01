@@ -1,0 +1,416 @@
+{
+    "title": "Guide for the Perplexed",
+    "categories": [
+        "Jewish Thought",
+        "Rishonim"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodes": [
+                    {
+                        "nodeType": "JaggedArrayNode",
+                        "depth": 1,
+                        "addressTypes": [
+                            "Integer"
+                        ],
+                        "sectionNames": [
+                            "Paragraph"
+                        ],
+                        "titles": [
+                            {
+                                "lang": "he",
+                                "text": "הקדמת מ. פרידלנדר",
+                                "primary": true
+                            },
+                            {
+                                "lang": "en",
+                                "text": "Introduction of M Friedlander",
+                                "primary": true
+                            }
+                        ],
+                        "title": "Introduction of M Friedlander",
+                        "heTitle": "הקדמת מ. פרידלנדר",
+                        "heSectionNames": [
+                            "פסקה"
+                        ],
+                        "key": "Introduction of M Friedlander"
+                    },
+                    {
+                        "nodeType": "JaggedArrayNode",
+                        "depth": 1,
+                        "addressTypes": [
+                            "Integer"
+                        ],
+                        "sectionNames": [
+                            "Paragraph"
+                        ],
+                        "titles": [
+                            {
+                                "lang": "he",
+                                "text": "פתיחת אבן תיבון",
+                                "primary": true
+                            },
+                            {
+                                "lang": "en",
+                                "text": "Introduction of Ibn Tibon",
+                                "primary": true
+                            }
+                        ],
+                        "title": "Introduction of Ibn Tibon",
+                        "heTitle": "פתיחת אבן תיבון",
+                        "heSectionNames": [
+                            "פסקה"
+                        ],
+                        "key": "Introduction of Ibn Tibon"
+                    }
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "הקדמות המתרגמים",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Translator's Introductions",
+                        "primary": true
+                    }
+                ],
+                "title": "Translator's Introductions",
+                "heTitle": "הקדמות המתרגמים",
+                "key": "Translator's Introductions"
+            },
+            {
+                "nodes": [
+                    {
+                        "nodeType": "JaggedArrayNode",
+                        "depth": 1,
+                        "addressTypes": [
+                            "Integer"
+                        ],
+                        "sectionNames": [
+                            "Paragraph"
+                        ],
+                        "titles": [
+                            {
+                                "lang": "he",
+                                "text": "איגרת אל ר' יוסף ש\"ץ ב\"ר יהודה",
+                                "primary": true
+                            },
+                            {
+                                "lang": "en",
+                                "text": "Letter to R Joseph son of Judah",
+                                "primary": true
+                            }
+                        ],
+                        "title": "Letter to R Joseph son of Judah",
+                        "heTitle": "איגרת אל ר' יוסף ש\"ץ ב\"ר יהודה",
+                        "heSectionNames": [
+                            "פסקה"
+                        ],
+                        "key": "Letter to R Joseph son of Judah"
+                    },
+                    {
+                        "nodeType": "JaggedArrayNode",
+                        "depth": 1,
+                        "addressTypes": [
+                            "Integer"
+                        ],
+                        "sectionNames": [
+                            "Paragraph"
+                        ],
+                        "titles": [
+                            {
+                                "lang": "he",
+                                "text": "פתיחת הרמב\"ם",
+                                "primary": true
+                            },
+                            {
+                                "lang": "en",
+                                "text": "Prefatory Remarks",
+                                "primary": true
+                            }
+                        ],
+                        "title": "Prefatory Remarks",
+                        "heTitle": "פתיחת הרמב\"ם",
+                        "heSectionNames": [
+                            "פסקה"
+                        ],
+                        "key": "Prefatory Remarks"
+                    },
+                    {
+                        "nodeType": "JaggedArrayNode",
+                        "depth": 1,
+                        "addressTypes": [
+                            "Integer"
+                        ],
+                        "sectionNames": [
+                            "Paragraph"
+                        ],
+                        "titles": [
+                            {
+                                "lang": "he",
+                                "text": "הקדמה",
+                                "primary": true
+                            },
+                            {
+                                "lang": "en",
+                                "text": "Introduction",
+                                "primary": true
+                            }
+                        ],
+                        "title": "Introduction",
+                        "heTitle": "הקדמה",
+                        "heSectionNames": [
+                            "פסקה"
+                        ],
+                        "key": "Introduction"
+                    }
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "הקדמה",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Introduction",
+                        "primary": true
+                    }
+                ],
+                "title": "Introduction",
+                "heTitle": "הקדמה",
+                "key": "Introduction"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Perek",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph"
+                ],
+                "lengths": [
+                    76
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "חלק א'",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Part 1",
+                        "primary": true
+                    }
+                ],
+                "title": "Part 1",
+                "heTitle": "חלק א'",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה"
+                ],
+                "key": "Part 1"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "חלק ב' הקדמה",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Part 2 Introduction",
+                        "primary": true
+                    }
+                ],
+                "title": "Part 2 Introduction",
+                "heTitle": "חלק ב' הקדמה",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Part 2 Introduction"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Perek",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph"
+                ],
+                "lengths": [
+                    48
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "חלק ב'",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Part 2",
+                        "primary": true
+                    }
+                ],
+                "title": "Part 2",
+                "heTitle": "חלק ב'",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה"
+                ],
+                "key": "Part 2"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "חלק ג' הקדמה",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Part 3 Introduction",
+                        "primary": true
+                    }
+                ],
+                "title": "Part 3 Introduction",
+                "heTitle": "חלק ג' הקדמה",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Part 3 Introduction"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Perek",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph"
+                ],
+                "lengths": [
+                    54
+                ],
+                "titles": [
+                    {
+                        "lang": "he",
+                        "text": "חלק ג'",
+                        "primary": true
+                    },
+                    {
+                        "lang": "en",
+                        "text": "Part 3",
+                        "primary": true
+                    }
+                ],
+                "title": "Part 3",
+                "heTitle": "חלק ג'",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה"
+                ],
+                "key": "Part 3"
+            }
+        ],
+        "titles": [
+            {
+                "text": "More Nevuchim",
+                "lang": "en"
+            },
+            {
+                "text": "Moreh Nebuchim",
+                "lang": "en"
+            },
+            {
+                "text": "Moreh Nevukhim",
+                "lang": "en"
+            },
+            {
+                "text": "מורה נבוכים",
+                "lang": "he",
+                "primary": true
+            },
+            {
+                "text": "ספר המורה",
+                "lang": "he"
+            },
+            {
+                "text": "Guide for the Perplexed",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Guide for the Perplexed",
+        "heTitle": "מורה נבוכים",
+        "key": "Guide for the Perplexed"
+    },
+    "authors": [
+        {
+            "en": "Rambam",
+            "he": "רמב\"ם",
+            "slug": "rambam"
+        }
+    ],
+    "enDesc": "The Guide for the Perplexed, written by Maimonides (Rambam), contains the author’s philosophical views. It is written in the form of a letter to his student, Rabbi Joseph ben Judah of Ceuta. Originally written in Judeo-Arabic, it was later translated to Hebrew (1204). The Guide includes Rambam’s objection to anthropomorphism, an explanation of the Biblical account of creation, and a description of the Merkavah.",
+    "enShortDesc": "Maimonides’ 12th-century philosophical masterwork, written as a letter to his student demonstrating the compatibility of Judaism and philosophy.",
+    "heShortDesc": "יצירת המופת של הרמב\"ם שנכתבה במאה ה-12 כאיגרת לתלמידיו שבה הוא מצביע על ההתאמה בין עיקרי היהדות ובין הפילוסופיה.",
+    "pubDate": "1475",
+    "compDate": "1190",
+    "compPlace": "Fustat",
+    "pubPlace": "Rome",
+    "era": "RI",
+    "heTitle": "מורה נבוכים",
+    "titleVariants": [
+        "More Nevuchim",
+        "Moreh Nebuchim",
+        "Moreh Nevukhim",
+        "Guide for the Perplexed"
+    ],
+    "heTitleVariants": [
+        "מורה נבוכים",
+        "ספר המורה"
+    ],
+    "heCategories": [
+        "מחשבת ישראל",
+        "ראשונים"
+    ],
+    "compDateString": {
+        "en": " (1190 CE)",
+        "he": " (1190 לספירה)"
+    },
+    "compPlaceString": {
+        "en": "Fustat",
+        "he": "פוסטאט"
+    }
+}

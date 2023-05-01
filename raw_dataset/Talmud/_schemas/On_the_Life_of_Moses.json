@@ -1,0 +1,80 @@
+{
+    "title": "On the Life of Moses",
+    "categories": [
+        "Second Temple",
+        "Philo"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 3,
+        "addressTypes": [
+            "Integer",
+            "Perek",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Book",
+            "Chapter",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "primary": true,
+                "text": "על חיי משה",
+                "lang": "he"
+            },
+            {
+                "text": "On the Life of Moses",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "On the Life of Moses",
+        "heTitle": "על חיי משה",
+        "heSectionNames": [
+            "ספר",
+            "פרק",
+            "פסקה"
+        ],
+        "key": "On the Life of Moses"
+    },
+    "authors": [
+        {
+            "en": "Philo of Alexandria",
+            "he": "פילון האלכסנדרוני",
+            "slug": "philo-of-alexandria"
+        }
+    ],
+    "enDesc": "The Life of Moses is part of Philo’s Exposition of the Law, a series containing biographies of several biblical patriarchs and books analyzing biblical law. Composed in Greek in the 1st century CE, the Life of Moses presents an interpretive biography of the biblical Moses, beginning from his childhood. It describes Moses as the paradigmatic leader who served as king, lawgiver, high priest, and prophet. As Philo explains in his opening paragraph, his aim in highlighting Moses’ character is to demonstrate the glory of the laws Moses gave.",
+    "enShortDesc": "Interpretive biography of Moses, describing him as king, lawgiver, high priest, and prophet.",
+    "heShortDesc": "ביוגרפיה פרשנית על חיי משה המתארת אותו כמלך, מחוקק, כהן גדול ונביא.",
+    "compDate": "20",
+    "compPlace": "Alexandria",
+    "errorMargin": "25",
+    "era": "T",
+    "heTitle": "על חיי משה",
+    "titleVariants": [
+        "On the Life of Moses"
+    ],
+    "heTitleVariants": [
+        "על חיי משה"
+    ],
+    "sectionNames": [
+        "Book",
+        "Chapter",
+        "Paragraph"
+    ],
+    "depth": 3,
+    "heCategories": [
+        "בית שני",
+        "פילון"
+    ],
+    "compDateString": {
+        "en": " (c.5 BCE  - c.45 CE)",
+        "he": " (5 לפנה\"ס  - 45 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Alexandria",
+        "he": "אלכסנדריה"
+    }
+}

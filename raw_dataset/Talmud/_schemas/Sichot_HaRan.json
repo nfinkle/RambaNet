@@ -1,0 +1,77 @@
+{
+    "title": "Sichot HaRan",
+    "categories": [
+        "Chasidut",
+        "Breslov"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Perek",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Verse"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "שיחות הר\"ן",
+                "primary": true
+            },
+            {
+                "lang": "he",
+                "text": "שיחות הרן"
+            },
+            {
+                "text": "Sichot HaRan",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Sichot HaRan",
+        "heTitle": "שיחות הר\"ן",
+        "heSectionNames": [
+            "פרק",
+            "פסוק"
+        ],
+        "key": "Sichot HaRan"
+    },
+    "authors": [
+        {
+            "en": "Nachman of Breslov",
+            "he": "נחמן מברסלב‎",
+            "slug": "nachman-of-breslov"
+        }
+    ],
+    "enDesc": "An introduction to the thought of Rebbe Nachman of Breslov, compiled by his closest disciple, Rabbi Natan of Nemirov.",
+    "enShortDesc": "Compilation of anecdotal conversations and insights of Rebbe Nachman originally published as an addendum to Sippurei Maasiyot.",
+    "heShortDesc": "לקט שיחות קצרות ותורות של רבי נחמן שהתפרסמו לראשונה כתוספת לחיבור סיפורי מעשיות.",
+    "pubDate": "1864",
+    "compDate": "1810",
+    "errorMargin": "7",
+    "era": "AH",
+    "heTitle": "שיחות הר\"ן",
+    "titleVariants": [
+        "Sichot HaRan"
+    ],
+    "heTitleVariants": [
+        "שיחות הר\"ן",
+        "שיחות הרן"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Verse"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "חסידות",
+        "ברסלב"
+    ],
+    "compDateString": {
+        "en": " (c.1803  - c.1817 CE)",
+        "he": " (1803 - 1817 לספירה בקירוב)"
+    }
+}

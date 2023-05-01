@@ -1,0 +1,94 @@
+{
+    "title": "Orot HaKodesh",
+    "categories": [
+        "Jewish Thought",
+        "Modern",
+        "Rav Kook"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 4,
+        "addressTypes": [
+            "Volume",
+            "Integer",
+            "Integer",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Volume",
+            "Section",
+            "Teaching",
+            ""
+        ],
+        "titles": [
+            {
+                "lang": "en",
+                "text": "Orot Hakodesh"
+            },
+            {
+                "lang": "he",
+                "text": "אורות הקודש",
+                "primary": true
+            },
+            {
+                "text": "Orot HaKodesh",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Orot HaKodesh",
+        "heTitle": "אורות הקודש",
+        "heSectionNames": [
+            "כרך",
+            "חלק",
+            "הוראה",
+            ""
+        ],
+        "key": "Orot HaKodesh"
+    },
+    "authors": [
+        {
+            "en": "Avraham Yitzchak HaCohen Kook",
+            "he": "הרב אברהם יצחק הכהן קוק",
+            "slug": "avraham-yitzchak-hacohen-kook"
+        }
+    ],
+    "enDesc": "Four volume compilation of essays containing the philosophy of R' Avraham Yitzchak Kook, edited and published by his student R' David HaKohen (\"The Nazir\").",
+    "heDesc": "אחד מספריו העיקריים של הרב אברהם יצחק הכהן קוק, בו מרוכז חלק ניכר ממשנתו הרוחנית. הספר סודר ונערך על ידי תלמידו של הרב קוק, הרב דוד כהן (\"הנזיר\"), מתוך כתבי היד שהרב מסר לו.",
+    "enShortDesc": "Four-volume compilation of essays containing Rav Kook’s philosophy, edited by his student, Rav David HaKohen (\"The Nazir\").",
+    "heShortDesc": "ארבעה כרכים הכוללים מסות פילוסופיות פרי כתיבתו של הרב קוק בעריכת תלמידו הרב דוד הכהן (\"הרב הנזיר\").",
+    "pubDate": "1938",
+    "compDate": "1930",
+    "compPlace": "Jerusalem",
+    "pubPlace": "Jerusalem",
+    "errorMargin": "10",
+    "era": "AH",
+    "heTitle": "אורות הקודש",
+    "titleVariants": [
+        "Orot Hakodesh",
+        "Orot HaKodesh"
+    ],
+    "heTitleVariants": [
+        "אורות הקודש"
+    ],
+    "sectionNames": [
+        "Volume",
+        "Section",
+        "Teaching",
+        ""
+    ],
+    "depth": 4,
+    "heCategories": [
+        "מחשבת ישראל",
+        "ספרות מודרנית",
+        "כתבי הרב קוק"
+    ],
+    "compDateString": {
+        "en": " (c.1920  - c.1940 CE)",
+        "he": " (1920 - 1940 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Jerusalem",
+        "he": "ירושלים"
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "title": "Kisse Rahamim on Tractate Kallah",
+    "categories": [
+        "Talmud",
+        "Bavli",
+        "Commentary on Minor Tractates",
+        "Kisse Rahamim"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 3,
+        "addressTypes": [
+            "Perek",
+            "Halakhah",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Halakhah",
+            "Comment"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "primary": true,
+                "text": "כסא רחמים על מסכת כלה"
+            },
+            {
+                "text": "Kisse Rahamim on Tractate Kallah",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Kisse Rahamim on Tractate Kallah",
+        "heTitle": "כסא רחמים על מסכת כלה",
+        "heSectionNames": [
+            "פרק",
+            "הלכה",
+            "פירוש"
+        ],
+        "key": "Kisse Rahamim on Tractate Kallah"
+    },
+    "authors": [
+        {
+            "en": "Hayyim Joseph David Azulay",
+            "he": "חיים דוד אזולאי",
+            "slug": "hayyim-joseph-david-azulay"
+        }
+    ],
+    "pubDate": "1803",
+    "compDate": "1780",
+    "pubPlace": "Livorno, Italy",
+    "errorMargin": "12",
+    "era": "AH",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Tractate Kallah",
+            "he": "מסכת כלה"
+        }
+    ],
+    "base_text_mapping": "many_to_one",
+    "collective_title": {
+        "en": "Kisse Rahamim",
+        "he": "כסא רחמים"
+    },
+    "heTitle": "כסא רחמים על מסכת כלה",
+    "titleVariants": [
+        "Kisse Rahamim on Tractate Kallah"
+    ],
+    "heTitleVariants": [
+        "כסא רחמים על מסכת כלה"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Halakhah",
+        "Comment"
+    ],
+    "depth": 3,
+    "heCategories": [
+        "תלמוד",
+        "בבלי",
+        "מפרשים על המסכתות הקטנות",
+        "כסא רחמים"
+    ],
+    "compDateString": {
+        "en": " (c.1768  - c.1792 CE)",
+        "he": " (1768 - 1792 לספירה בקירוב)"
+    }
+}

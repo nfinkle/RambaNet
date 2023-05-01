@@ -1,0 +1,71 @@
+{
+    "title": "Revealment and Concealment in Language",
+    "categories": [
+        "Jewish Thought",
+        "Modern"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 1,
+        "addressTypes": [
+            "Integer"
+        ],
+        "sectionNames": [
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "primary": true,
+                "text": "גילוי וכיסוי בלשון",
+                "lang": "he"
+            },
+            {
+                "text": "Revealment and Concealment in Language",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Revealment and Concealment in Language",
+        "heTitle": "גילוי וכיסוי בלשון",
+        "heSectionNames": [
+            "פסקה"
+        ],
+        "key": "Revealment and Concealment in Language"
+    },
+    "authors": [
+        {
+            "en": "Hayim Nahman Bialik",
+            "he": "חיים נחמן ביאליק",
+            "slug": "hayim-nahman-bialik"
+        }
+    ],
+    "enShortDesc": "20th-century poetic essay of Chaim Nachman Bialik on the meaning of words and the difference between poetry and prose.",
+    "heShortDesc": "חיבור בעל אופי ספרותי שכתב חיים נחמן ביאליק במאה ה-20, ותוכנו מוקדש למשמעות המילים ולהבדל שבין שירה לפרוזה.",
+    "pubDate": "1915",
+    "compDate": "1915",
+    "compPlace": "Odessa",
+    "era": "CO",
+    "heTitle": "גילוי וכיסוי בלשון",
+    "titleVariants": [
+        "Revealment and Concealment in Language"
+    ],
+    "heTitleVariants": [
+        "גילוי וכיסוי בלשון"
+    ],
+    "sectionNames": [
+        "Paragraph"
+    ],
+    "depth": 1,
+    "heCategories": [
+        "מחשבת ישראל",
+        "ספרות מודרנית"
+    ],
+    "compDateString": {
+        "en": " (1915 CE)",
+        "he": " (1915 לספירה)"
+    },
+    "compPlaceString": {
+        "en": "Odessa",
+        "he": "אודסה"
+    }
+}

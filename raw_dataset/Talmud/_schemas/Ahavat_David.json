@@ -1,0 +1,102 @@
+{
+    "title": "Ahavat David",
+    "categories": [
+        "Musar",
+        "Acharonim"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "lang": "en",
+                        "primary": true,
+                        "text": "Title"
+                    },
+                    {
+                        "lang": "he",
+                        "primary": true,
+                        "text": "שער"
+                    }
+                ],
+                "title": "Title",
+                "heTitle": "שער",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Title"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph"
+                ],
+                "default": true,
+                "title": "",
+                "heTitle": "",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה"
+                ],
+                "key": "default"
+            }
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "primary": true,
+                "text": "אהבת דוד"
+            },
+            {
+                "text": "Ahavat David",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Ahavat David",
+        "heTitle": "אהבת דוד",
+        "key": "Ahavat David"
+    },
+    "authors": [
+        {
+            "en": "Hayyim Joseph David Azulay",
+            "he": "חיים דוד אזולאי",
+            "slug": "hayyim-joseph-david-azulay"
+        }
+    ],
+    "enDesc": "Book of sermons by Rabbi Hayyim Joseph David Azulay.",
+    "enShortDesc": "18th-century compilation of 17 sermons delivered by the Chida on the Shabbatot before Yom Kippur, Purim, Pesach, and Shavuot.",
+    "heShortDesc": "אוסף מן המאה ה-18 של 17 דרשות שאמר החיד\"א בשבתות לפני יום הכיפורים, פורים, פסח ושבועות.",
+    "compDate": "1780",
+    "errorMargin": "12",
+    "era": "AH",
+    "heTitle": "אהבת דוד",
+    "titleVariants": [
+        "Ahavat David"
+    ],
+    "heTitleVariants": [
+        "אהבת דוד"
+    ],
+    "heCategories": [
+        "ספרי מוסר",
+        "אחרונים"
+    ],
+    "compDateString": {
+        "en": " (c.1768  - c.1792 CE)",
+        "he": " (1768 - 1792 לספירה בקירוב)"
+    }
+}

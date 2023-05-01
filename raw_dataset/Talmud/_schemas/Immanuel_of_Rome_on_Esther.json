@@ -1,0 +1,94 @@
+{
+    "title": "Immanuel of Rome on Esther",
+    "categories": [
+        "Tanakh",
+        "Rishonim on Tanakh"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 3,
+        "addressTypes": [
+            "Perek",
+            "Pasuk",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Verse",
+            "Comment"
+        ],
+        "lengths": [
+            10,
+            142,
+            330
+        ],
+        "toc_zoom": 2,
+        "isSegmentLevelDiburHamatchil": true,
+        "titles": [
+            {
+                "primary": true,
+                "lang": "he",
+                "text": "עמנואל הרומי על אסתר"
+            },
+            {
+                "text": "Immanuel of Rome on Esther",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Immanuel of Rome on Esther",
+        "heTitle": "עמנואל הרומי על אסתר",
+        "heSectionNames": [
+            "פרק",
+            "פסוק",
+            "פירוש"
+        ],
+        "key": "Immanuel of Rome on Esther"
+    },
+    "authors": [
+        {
+            "en": "Immanuel of Rome",
+            "he": "עמנואל הרומי",
+            "slug": "immanuel-of-rome"
+        }
+    ],
+    "enShortDesc": "14th-century commentary incorporating allegorical interpretation, philosophy, and mysticism.",
+    "heShortDesc": "פירוש מן המאה ה-14 המשלב פרשנות אלגורית, פילוסופיה ומיסטיקה.",
+    "compDate": "1305",
+    "compPlace": "Middle-Age Italy",
+    "errorMargin": "20",
+    "era": "RI",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Esther",
+            "he": "אסתר"
+        }
+    ],
+    "base_text_mapping": "many_to_one",
+    "heTitle": "עמנואל הרומי על אסתר",
+    "titleVariants": [
+        "Immanuel of Rome on Esther"
+    ],
+    "heTitleVariants": [
+        "עמנואל הרומי על אסתר"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Verse",
+        "Comment"
+    ],
+    "depth": 3,
+    "heCategories": [
+        "תנ\"ך",
+        "ראשונים על התנ״ך"
+    ],
+    "compDateString": {
+        "en": " (c.1285  - c.1325 CE)",
+        "he": " (1285 - 1325 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Middle-Age Italy",
+        "he": "איטליה של ימי הביניים"
+    }
+}

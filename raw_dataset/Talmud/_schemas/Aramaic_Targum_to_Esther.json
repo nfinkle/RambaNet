@@ -1,0 +1,96 @@
+{
+    "title": "Aramaic Targum to Esther",
+    "categories": [
+        "Tanakh",
+        "Targum",
+        "Aramaic Targum",
+        "Writings"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Perek",
+            "Pasuk"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Verse"
+        ],
+        "match_templates": [
+            {
+                "term_slugs": [
+                    "aramaic-targum",
+                    "esther"
+                ]
+            }
+        ],
+        "lengths": [
+            10,
+            167
+        ],
+        "titles": [
+            {
+                "lang": "en",
+                "text": "Targ. Esth."
+            },
+            {
+                "text": "תרגום אסתר",
+                "lang": "he",
+                "primary": true
+            },
+            {
+                "text": "Aramaic Targum to Esther",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Aramaic Targum to Esther",
+        "heTitle": "תרגום אסתר",
+        "heSectionNames": [
+            "פרק",
+            "פסוק"
+        ],
+        "key": "Aramaic Targum to Esther"
+    },
+    "authors": [],
+    "compDate": "300",
+    "errorMargin": "300",
+    "era": "A",
+    "dependence": "Targum",
+    "base_text_titles": [
+        {
+            "en": "Esther",
+            "he": "אסתר"
+        }
+    ],
+    "base_text_mapping": "one_to_one",
+    "collective_title": {
+        "en": "Aramaic Targum",
+        "he": "תרגום"
+    },
+    "is_cited": true,
+    "heTitle": "תרגום אסתר",
+    "titleVariants": [
+        "Targ. Esth.",
+        "Aramaic Targum to Esther"
+    ],
+    "heTitleVariants": [
+        "תרגום אסתר"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Verse"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "תנ\"ך",
+        "תרגומים",
+        "תרגום",
+        "כתובים"
+    ],
+    "compDateString": {
+        "en": " (c.0  - c.600 CE)",
+        "he": " (0 - 600 לספירה בקירוב)"
+    }
+}

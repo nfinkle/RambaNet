@@ -1,0 +1,94 @@
+{
+    "title": "Rashash on Mishnah Oholot",
+    "categories": [
+        "Mishnah",
+        "Acharonim on Mishnah",
+        "Rashash",
+        "Seder Tahorot"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 3,
+        "addressTypes": [
+            "Integer",
+            "Mishnah",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Mishnah",
+            "Comment"
+        ],
+        "titles": [
+            {
+                "text": "רש״ש על משנה אהלות",
+                "lang": "he",
+                "primary": true
+            },
+            {
+                "text": "Rashash on Mishnah Oholot",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Rashash on Mishnah Oholot",
+        "heTitle": "רש״ש על משנה אהלות",
+        "heSectionNames": [
+            "פרק",
+            "משנה",
+            "פירוש"
+        ],
+        "key": "Rashash on Mishnah Oholot"
+    },
+    "authors": [
+        {
+            "en": "Shmuel Strashun",
+            "he": "שמואל שטראשון",
+            "slug": "shmuel-strashun"
+        }
+    ],
+    "compDate": "1842",
+    "compPlace": "Vilna",
+    "pubPlace": "Vilna",
+    "errorMargin": "10",
+    "era": "AH",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Mishnah Oholot",
+            "he": "משנה אהלות"
+        }
+    ],
+    "base_text_mapping": "many_to_one",
+    "collective_title": {
+        "en": "Rashash",
+        "he": "רש״ש"
+    },
+    "heTitle": "רש״ש על משנה אהלות",
+    "titleVariants": [
+        "Rashash on Mishnah Oholot"
+    ],
+    "heTitleVariants": [
+        "רש״ש על משנה אהלות"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Mishnah",
+        "Comment"
+    ],
+    "depth": 3,
+    "heCategories": [
+        "משנה",
+        "אחרונים על המשנה",
+        "רש״ש",
+        "סדר טהרות"
+    ],
+    "compDateString": {
+        "en": " (c.1832  - c.1852 CE)",
+        "he": " (1832 - 1852 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Vilna",
+        "he": "וילנה"
+    }
+}

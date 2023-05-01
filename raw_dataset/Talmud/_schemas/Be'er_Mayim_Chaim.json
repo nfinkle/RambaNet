@@ -1,0 +1,232 @@
+{
+    "title": "Be'er Mayim Chaim",
+    "categories": [
+        "Chasidut",
+        "Other Chasidut Works"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Perek",
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph",
+                    "Comment"
+                ],
+                "toc_zoom": 2,
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Genesis",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "בראשית",
+                        "primary": true
+                    }
+                ],
+                "title": "Genesis",
+                "heTitle": "בראשית",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה",
+                    "פירוש"
+                ],
+                "key": "Genesis"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Perek",
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph",
+                    "Comment"
+                ],
+                "toc_zoom": 2,
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Exodus",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "שמות",
+                        "primary": true
+                    }
+                ],
+                "title": "Exodus",
+                "heTitle": "שמות",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה",
+                    "פירוש"
+                ],
+                "key": "Exodus"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Perek",
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph",
+                    "Comment"
+                ],
+                "toc_zoom": 2,
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Leviticus",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "ויקרא",
+                        "primary": true
+                    }
+                ],
+                "title": "Leviticus",
+                "heTitle": "ויקרא",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה",
+                    "פירוש"
+                ],
+                "key": "Leviticus"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Perek",
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph",
+                    "Comment"
+                ],
+                "toc_zoom": 2,
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Numbers",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "במדבר",
+                        "primary": true
+                    }
+                ],
+                "title": "Numbers",
+                "heTitle": "במדבר",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה",
+                    "פירוש"
+                ],
+                "key": "Numbers"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Perek",
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph",
+                    "Comment"
+                ],
+                "toc_zoom": 2,
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Deuteronomy",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "דברים",
+                        "primary": true
+                    }
+                ],
+                "title": "Deuteronomy",
+                "heTitle": "דברים",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה",
+                    "פירוש"
+                ],
+                "key": "Deuteronomy"
+            }
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "באר מים חיים",
+                "primary": true
+            },
+            {
+                "text": "Be'er Mayim Chaim",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Be'er Mayim Chaim",
+        "heTitle": "באר מים חיים",
+        "key": "Be'er Mayim Chaim"
+    },
+    "authors": [
+        {
+            "en": "Chaim Tyrer of Tchernovitz",
+            "he": "חיים בן שלמה טירר מטשטרנוביץ",
+            "slug": "chaim-tyrer-of-tchernovitz"
+        }
+    ],
+    "enDesc": "Torah commentary by R' Chaim of Chernowitz (1760-1816), considered a classic Chassidic work.",
+    "heDesc": "אחד מספרי החסידות היסודיים על התורה, חיבר ר' חיים מטשרנוביץ, שגם נקרא על שם ספרו.",
+    "enShortDesc": "Classic 19th-century Torah commentary by Rabbi Chaim Tyrer of Tchernovitz, in clear and accessible language.",
+    "heShortDesc": "פירוש על התורה שכתב רבי חיים טירר מצ'רנוביץ, הכתוב בשפה בהירה ונגישה.",
+    "pubDate": "1820",
+    "compDate": "1795",
+    "pubPlace": "Chernivtsi",
+    "errorMargin": "20",
+    "era": "AH",
+    "heTitle": "באר מים חיים",
+    "titleVariants": [
+        "Be'er Mayim Chaim"
+    ],
+    "heTitleVariants": [
+        "באר מים חיים"
+    ],
+    "heCategories": [
+        "חסידות",
+        "ספרי חסידות נוספים"
+    ],
+    "compDateString": {
+        "en": " (c.1775  - c.1815 CE)",
+        "he": " (1775 - 1815 לספירה בקירוב)"
+    }
+}

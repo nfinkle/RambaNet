@@ -1,0 +1,111 @@
+{
+    "title": "Orot HaTorah",
+    "categories": [
+        "Jewish Thought",
+        "Modern",
+        "Rav Kook"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "sharedTitle": "Introduction",
+                "titles": [
+                    {
+                        "lang": "en",
+                        "text": "Introduction",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "הקדמה",
+                        "primary": true
+                    },
+                    {
+                        "lang": "he",
+                        "text": "מבוא"
+                    }
+                ],
+                "title": "Introduction",
+                "heTitle": "הקדמה",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Introduction"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Chapter",
+                    "Paragraph"
+                ],
+                "default": true,
+                "title": "",
+                "heTitle": "",
+                "heSectionNames": [
+                    "פרק",
+                    "פסקה"
+                ],
+                "key": "default"
+            }
+        ],
+        "titles": [
+            {
+                "primary": true,
+                "lang": "he",
+                "text": "אורות התורה"
+            },
+            {
+                "text": "Orot HaTorah",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Orot HaTorah",
+        "heTitle": "אורות התורה",
+        "key": "Orot HaTorah"
+    },
+    "authors": [
+        {
+            "en": "Avraham Yitzchak HaCohen Kook",
+            "he": "הרב אברהם יצחק הכהן קוק",
+            "slug": "avraham-yitzchak-hacohen-kook"
+        }
+    ],
+    "enDesc": "Rav Kook's conceptual essay on the meaning, purpose and advisable structure of Torah study.",
+    "enShortDesc": "Short work on the meaning and purpose of Torah study, edited by Rav Kook’s son, Rav Tzvi Yehuda Kook.",
+    "heShortDesc": "חיבורים קצרים הדנים במשמעות לימוד התורה ומטרתו, בעריכת בנו של הרב קוק, הרב צבי יהודה קוק.",
+    "pubDate": "1940",
+    "compDate": "1910",
+    "pubPlace": "Jerusalem",
+    "errorMargin": "15",
+    "era": "AH",
+    "heTitle": "אורות התורה",
+    "titleVariants": [
+        "Orot HaTorah"
+    ],
+    "heTitleVariants": [
+        "אורות התורה"
+    ],
+    "heCategories": [
+        "מחשבת ישראל",
+        "ספרות מודרנית",
+        "כתבי הרב קוק"
+    ],
+    "compDateString": {
+        "en": " (c.1895  - c.1925 CE)",
+        "he": " (1895 - 1925 לספירה בקירוב)"
+    }
+}

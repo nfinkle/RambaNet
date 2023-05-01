@@ -1,0 +1,72 @@
+{
+    "title": "Machshavot Charutz",
+    "categories": [
+        "Chasidut",
+        "R' Tzadok HaKohen"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Perek",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "primary": true,
+                "text": "מחשבות חרוץ",
+                "lang": "he"
+            },
+            {
+                "text": "Machshavot Charutz",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Machshavot Charutz",
+        "heTitle": "מחשבות חרוץ",
+        "heSectionNames": [
+            "פרק",
+            "פסקה"
+        ],
+        "key": "Machshavot Charutz"
+    },
+    "authors": [
+        {
+            "en": "Tzadok HaKohen of Lublin",
+            "he": "צדוק הכהן רבינוביץ",
+            "slug": "tzadok-hakohen-of-lublin"
+        }
+    ],
+    "enShortDesc": "Essays on the nature of thought and the spiritual significance of the holidays.",
+    "heShortDesc": "דרשות העוסקות במהותה של המחשבה ובמשמעותם הרוחנית של חגי ישראל.",
+    "pubDate": "1912",
+    "compDate": "1870",
+    "pubPlace": "Lublin",
+    "errorMargin": "25",
+    "era": "AH",
+    "heTitle": "מחשבות חרוץ",
+    "titleVariants": [
+        "Machshavot Charutz"
+    ],
+    "heTitleVariants": [
+        "מחשבות חרוץ"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "חסידות",
+        "ר' צדוק הכוהן"
+    ],
+    "compDateString": {
+        "en": " (c.1845  - c.1895 CE)",
+        "he": " (1845 - 1895 לספירה בקירוב)"
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "title": "Baal HaSulam's Introduction to Zohar",
+    "categories": [
+        "Kabbalah",
+        "Baal HaSulam"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Integer",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "text": "Hakdamah Lesefer HaZohar",
+                "lang": "en"
+            },
+            {
+                "text": "הקדמות לחכמת האמת - ספר הזוהר",
+                "lang": "he",
+                "primary": true
+            },
+            {
+                "text": "הקדמה לספר הזוהר",
+                "lang": "he"
+            },
+            {
+                "text": "Baal HaSulam's Introduction to Zohar",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Baal HaSulam's Introduction to Zohar",
+        "heTitle": "הקדמות לחכמת האמת - ספר הזוהר",
+        "heSectionNames": [
+            "פרק",
+            "פסקה"
+        ],
+        "key": "Baal HaSulam's Introduction to Zohar"
+    },
+    "authors": [
+        {
+            "en": "Yehuda Ashlag",
+            "he": "יהודה לייב הלוי אשלג",
+            "slug": "yehuda-ashlag"
+        }
+    ],
+    "enDesc": "An accessible contemporary introduction to the Zohar and the kabbalistic system.",
+    "enShortDesc": "Accessible introduction to the Zohar and kabbalah.",
+    "heShortDesc": "הקדמה מן המאה ה-20 לספר הזוהר ולעולם הקבלה, כתובה בסגנון נגיש.",
+    "pubDate": "1945",
+    "compDate": "1940",
+    "compPlace": "Jerusalem",
+    "pubPlace": "Jerusalem",
+    "errorMargin": "5",
+    "era": "CO",
+    "heTitle": "הקדמות לחכמת האמת - ספר הזוהר",
+    "titleVariants": [
+        "Hakdamah Lesefer HaZohar",
+        "Baal HaSulam's Introduction to Zohar"
+    ],
+    "heTitleVariants": [
+        "הקדמות לחכמת האמת - ספר הזוהר",
+        "הקדמה לספר הזוהר"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "קבלה",
+        "בעל הסולם"
+    ],
+    "compDateString": {
+        "en": " (c.1935  - c.1945 CE)",
+        "he": " (1935 - 1945 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Jerusalem",
+        "he": "ירושלים"
+    }
+}

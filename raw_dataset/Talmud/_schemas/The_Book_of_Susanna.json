@@ -1,0 +1,61 @@
+{
+    "title": "The Book of Susanna",
+    "categories": [
+        "Second Temple",
+        "Apocrypha"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Perek",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Verse"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "ספר שושנה",
+                "primary": true
+            },
+            {
+                "text": "The Book of Susanna",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "The Book of Susanna",
+        "heTitle": "ספר שושנה",
+        "heSectionNames": [
+            "פרק",
+            "פסוק"
+        ],
+        "key": "The Book of Susanna"
+    },
+    "authors": [],
+    "enDesc": "The Book of Sussanah is an aporcyphal short story about an attempted rape of a righteous married woman by two Jewish elders. When she resists their advances, the elders accuse her of adultery, and she is condemned to death. She beseeches God for mercy, and is proven innocent when the elders, interrogated by the prophet Daniel, disagree about the tree under which the adultery allegedly took place. The story is included in the Septuagint and other Greek biblical manuscripts as part of the Book of Daniel, but not in Hebrew manuscripts. It has inspired much art and music.",
+    "heDesc": "הוספה אפוקריפי לספר דניאל.",
+    "enShortDesc": "Story of attempted rape included in Greek versions of the Book of Daniel.",
+    "heShortDesc": "סיפור על ניסיון אונס הכלול בגרסה היוונית של ספר דניאל.",
+    "compDate": "250 BCE",
+    "errorMargin": "100",
+    "heTitle": "ספר שושנה",
+    "titleVariants": [
+        "The Book of Susanna"
+    ],
+    "heTitleVariants": [
+        "ספר שושנה"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Verse"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "בית שני",
+        "ספרים חיצונים"
+    ]
+}

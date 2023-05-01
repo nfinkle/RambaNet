@@ -1,0 +1,79 @@
+{
+    "title": "Conversion \"According to Halakhah\"; What Is It",
+    "categories": [
+        "Jewish Thought",
+        "Modern",
+        "Eliezer Berkovits"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Integer",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "primary": true,
+                "lang": "he",
+                "text": "גיור 'כהלכתו' - מהו?"
+            },
+            {
+                "text": "Conversion \"According to Halakhah\"; What Is It",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Conversion \"According to Halakhah\"; What Is It",
+        "heTitle": "גיור 'כהלכתו' - מהו?",
+        "heSectionNames": [
+            "פרק",
+            "פסקה"
+        ],
+        "key": "Conversion \"According to Halakhah\"; What Is It"
+    },
+    "authors": [
+        {
+            "en": "Eliezer Berkovits",
+            "he": "אליעזר ברקוביץ",
+            "slug": "eliezer-berkovits"
+        }
+    ],
+    "enDesc": "An argument for Jewish unity as a critical variable in deciding how to formulate Orthodox conversion policy, this essay also deals with the nature of the oral law and its need for great flexibility in order to deal with issues as they arise historically.",
+    "heDesc": "טיעונים בעד אחדות ישראל כשיקול מרכזי בגיבוש מדיניות הגיור האורתודוקסי.",
+    "enShortDesc": "Argument for Jewish unity as a critical variable in deciding how to formulate Orthodox conversion policy.",
+    "pubDate": "1974",
+    "compDate": "1973",
+    "compPlace": "Skokie, Illinois",
+    "errorMargin": "1",
+    "era": "CO",
+    "heTitle": "גיור 'כהלכתו' - מהו?",
+    "titleVariants": [
+        "Conversion \"According to Halakhah\"; What Is It"
+    ],
+    "heTitleVariants": [
+        "גיור 'כהלכתו' - מהו?"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "מחשבת ישראל",
+        "ספרות מודרנית",
+        "אליעזר ברקוביץ"
+    ],
+    "compDateString": {
+        "en": " (c.1972  - c.1974 CE)",
+        "he": " (1972 - 1974 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Skokie, Illinois",
+        "he": "סקוקי"
+    }
+}

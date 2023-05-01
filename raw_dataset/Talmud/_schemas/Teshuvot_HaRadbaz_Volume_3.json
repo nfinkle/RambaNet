@@ -1,0 +1,78 @@
+{
+    "title": "Teshuvot HaRadbaz Volume 3",
+    "categories": [
+        "Responsa",
+        "Acharonim",
+        "Radbaz"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 2,
+        "addressTypes": [
+            "Integer",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Teshuva",
+            "Paragraph"
+        ],
+        "titles": [
+            {
+                "lang": "he",
+                "text": "תשובות הרדב\"ז חלק ג",
+                "primary": true
+            },
+            {
+                "text": "Teshuvot HaRadbaz Volume 3",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Teshuvot HaRadbaz Volume 3",
+        "heTitle": "תשובות הרדב\"ז חלק ג",
+        "heSectionNames": [
+            "",
+            "פסקה"
+        ],
+        "key": "Teshuvot HaRadbaz Volume 3"
+    },
+    "authors": [
+        {
+            "en": "David ben Solomon ibn (Abi) Zimra",
+            "he": "דוד בן שלמה אבן אבי זמרא",
+            "slug": "david-ben-solomon-ibn-(abi)-zimra"
+        }
+    ],
+    "enDesc": "A collection of Responsa written by David ben Solomon ibn Zimra (Radbaz). The Radbaz (c. 1479 - 1517) was an important halakhic decisor who lived in Spain, Cairo, Fes, Jerusalem, and Tzfat.",
+    "pubDate": "1781",
+    "compDate": "1505",
+    "compPlace": "Cairo, Egypt",
+    "pubPlace": "Fuerth",
+    "errorMargin": "10",
+    "era": "AH",
+    "heTitle": "תשובות הרדב\"ז חלק ג",
+    "titleVariants": [
+        "Teshuvot HaRadbaz Volume 3"
+    ],
+    "heTitleVariants": [
+        "תשובות הרדב\"ז חלק ג"
+    ],
+    "sectionNames": [
+        "Teshuva",
+        "Paragraph"
+    ],
+    "depth": 2,
+    "heCategories": [
+        "שו\"ת",
+        "אחרונים",
+        "רדב\"ז"
+    ],
+    "compDateString": {
+        "en": " (c.1495  - c.1515 CE)",
+        "he": " (1495 - 1515 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Cairo, Egypt",
+        "he": "קהיר"
+    }
+}

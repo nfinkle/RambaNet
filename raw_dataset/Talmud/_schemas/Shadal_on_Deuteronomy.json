@@ -1,0 +1,180 @@
+{
+    "title": "Shadal on Deuteronomy",
+    "categories": [
+        "Tanakh",
+        "Acharonim on Tanakh",
+        "Shadal",
+        "Torah"
+    ],
+    "schema": {
+        "nodeType": "JaggedArrayNode",
+        "depth": 3,
+        "addressTypes": [
+            "Perek",
+            "Pasuk",
+            "Integer"
+        ],
+        "sectionNames": [
+            "Chapter",
+            "Verse",
+            "Comment"
+        ],
+        "match_templates": [
+            {
+                "term_slugs": [
+                    "shadal",
+                    "deuteronomy"
+                ]
+            }
+        ],
+        "lengths": [
+            34,
+            301,
+            371
+        ],
+        "isSegmentLevelDiburHamatchil": true,
+        "diburHamatchilRegexes": [
+            "^<b>(.+?)</b>",
+            "^(.+?)[\\-–]"
+        ],
+        "titles": [
+            {
+                "lang": "en",
+                "text": "Shadal on Deu."
+            },
+            {
+                "lang": "en",
+                "text": "Shadal on Devarim"
+            },
+            {
+                "lang": "en",
+                "text": "Shadal on Deu"
+            },
+            {
+                "lang": "en",
+                "text": "Shadal on Deut."
+            },
+            {
+                "lang": "en",
+                "text": "Shadal on Deut"
+            },
+            {
+                "lang": "he",
+                "text": "שד\"ל על דברי'"
+            },
+            {
+                "lang": "he",
+                "text": "שד\"ל על דברי׳"
+            },
+            {
+                "text": "שד״ל על דברים",
+                "lang": "he"
+            },
+            {
+                "text": "שד”ל על דברים",
+                "lang": "he"
+            },
+            {
+                "text": "שד״ל על דברי'",
+                "lang": "he"
+            },
+            {
+                "text": "שד”ל על דברי'",
+                "lang": "he"
+            },
+            {
+                "text": "שד״ל על דברי׳",
+                "lang": "he"
+            },
+            {
+                "text": "שד”ל על דברי׳",
+                "lang": "he"
+            },
+            {
+                "text": "שד\"ל על דברים",
+                "lang": "he",
+                "primary": true
+            },
+            {
+                "text": "Shadal on Deuteronomy",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Shadal on Deuteronomy",
+        "heTitle": "שד\"ל על דברים",
+        "heSectionNames": [
+            "פרק",
+            "פסוק",
+            "פירוש"
+        ],
+        "key": "Shadal on Deuteronomy"
+    },
+    "authors": [
+        {
+            "en": "Shadal",
+            "he": "שד\"ל",
+            "slug": "shadal"
+        }
+    ],
+    "enDesc": "Commentary written by R. Samuel David Luzzatto, Shadal, (Italy 1800 – 1865). Shadal’s commentary develops a unique approach to resolving the problem that occurs when the pshat (contextual) meaning of the text conflicts with halakha, as presented in midrash halakha. Shadal argues that the pshat reflects what the Torah means and the midrash reflects the halakha and not biblical interpretation. He claims that instead of being biblical interpretation, the midrash halakha is rabbinic legislation with the desire to take a more lenient position than the Torah text.",
+    "pubDate": "1871",
+    "compDate": "1855",
+    "compPlace": "Padua",
+    "pubPlace": "Padua",
+    "errorMargin": "10",
+    "era": "AH",
+    "dependence": "Commentary",
+    "base_text_titles": [
+        {
+            "en": "Deuteronomy",
+            "he": "ספר דברים"
+        }
+    ],
+    "base_text_mapping": "many_to_one",
+    "collective_title": {
+        "en": "Shadal",
+        "he": "שד\"ל"
+    },
+    "is_cited": true,
+    "heTitle": "שד\"ל על דברים",
+    "titleVariants": [
+        "Shadal on Deu.",
+        "Shadal on Devarim",
+        "Shadal on Deu",
+        "Shadal on Deut.",
+        "Shadal on Deut",
+        "Shadal on Deuteronomy"
+    ],
+    "heTitleVariants": [
+        "שד\"ל על דברי'",
+        "שד\"ל על דברי׳",
+        "שד״ל על דברים",
+        "שד”ל על דברים",
+        "שד״ל על דברי'",
+        "שד”ל על דברי'",
+        "שד״ל על דברי׳",
+        "שד”ל על דברי׳",
+        "שד\"ל על דברים"
+    ],
+    "sectionNames": [
+        "Chapter",
+        "Verse",
+        "Comment"
+    ],
+    "depth": 3,
+    "heCategories": [
+        "תנ\"ך",
+        "אחרונים על התנ״ך",
+        "שד\"ל",
+        "תורה"
+    ],
+    "compDateString": {
+        "en": " (c.1845  - c.1865 CE)",
+        "he": " (1845 - 1865 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Padua",
+        "he": "פדובה"
+    }
+}

@@ -1,0 +1,245 @@
+{
+    "title": "Sefer HaTashbetz",
+    "categories": [
+        "Responsa",
+        "Rishonim"
+    ],
+    "schema": {
+        "nodes": [
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "primary": true,
+                        "text": "Approbrations",
+                        "lang": "en"
+                    },
+                    {
+                        "primary": true,
+                        "text": "הסכמות",
+                        "lang": "he"
+                    }
+                ],
+                "title": "Approbrations",
+                "heTitle": "הסכמות",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Approbrations"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 1,
+                "addressTypes": [
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "primary": true,
+                        "text": "Introduction",
+                        "lang": "en"
+                    },
+                    {
+                        "primary": true,
+                        "text": "הקדמה",
+                        "lang": "he"
+                    }
+                ],
+                "title": "Introduction",
+                "heTitle": "הקדמה",
+                "heSectionNames": [
+                    "פסקה"
+                ],
+                "key": "Introduction"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Teshuvah",
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "primary": true,
+                        "text": "Part I",
+                        "lang": "en"
+                    },
+                    {
+                        "primary": true,
+                        "text": "חלק ראשון",
+                        "lang": "he"
+                    }
+                ],
+                "title": "Part I",
+                "heTitle": "חלק ראשון",
+                "heSectionNames": [
+                    "תשובה",
+                    "פסקה"
+                ],
+                "key": "Part I"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Teshuvah",
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "primary": true,
+                        "text": "Part II",
+                        "lang": "en"
+                    },
+                    {
+                        "primary": true,
+                        "text": "חלק שני",
+                        "lang": "he"
+                    }
+                ],
+                "title": "Part II",
+                "heTitle": "חלק שני",
+                "heSectionNames": [
+                    "תשובה",
+                    "פסקה"
+                ],
+                "key": "Part II"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 2,
+                "addressTypes": [
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Teshuvah",
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "primary": true,
+                        "text": "Part III",
+                        "lang": "en"
+                    },
+                    {
+                        "primary": true,
+                        "text": "חלק שלישי",
+                        "lang": "he"
+                    }
+                ],
+                "title": "Part III",
+                "heTitle": "חלק שלישי",
+                "heSectionNames": [
+                    "תשובה",
+                    "פסקה"
+                ],
+                "key": "Part III"
+            },
+            {
+                "nodeType": "JaggedArrayNode",
+                "depth": 3,
+                "addressTypes": [
+                    "Integer",
+                    "Integer",
+                    "Integer"
+                ],
+                "sectionNames": [
+                    "Section",
+                    "Teshuvah",
+                    "Paragraph"
+                ],
+                "titles": [
+                    {
+                        "primary": true,
+                        "text": "Part IV",
+                        "lang": "en"
+                    },
+                    {
+                        "primary": true,
+                        "text": "חלק רביעי",
+                        "lang": "he"
+                    }
+                ],
+                "title": "Part IV",
+                "heTitle": "חלק רביעי",
+                "heSectionNames": [
+                    "חלק",
+                    "תשובה",
+                    "פסקה"
+                ],
+                "key": "Part IV"
+            }
+        ],
+        "titles": [
+            {
+                "primary": true,
+                "text": "ספר התשב\"ץ",
+                "lang": "he"
+            },
+            {
+                "text": "Sefer HaTashbetz",
+                "lang": "en",
+                "primary": true
+            }
+        ],
+        "title": "Sefer HaTashbetz",
+        "heTitle": "ספר התשב\"ץ",
+        "key": "Sefer HaTashbetz"
+    },
+    "authors": [
+        {
+            "en": "Shimon ben Tzemach Duran",
+            "he": "שמעון בן צמח דוראן",
+            "slug": "shimon-ben-tzemach-duran"
+        }
+    ],
+    "enDesc": "Collection of over 900 responsa of the Rashbatz (Tashbetz is an acronym for \"Teshuvot Shimon ben Tzemach\"). In addition to Halacha, these correspondences cover many other facets of Judaism, including Aggadah, philosophy and astronomy.",
+    "heDesc": "שו\"ת מהרשב\"ץ (תשב\"ץ = תשובות שמעון בן צמח).",
+    "enShortDesc": "15th-century responsa of the North African Rav Shimon ben Tzemach Duran, with a number of letters on math, history, and grammar.",
+    "heShortDesc": "שאלות ותשובות מאת הרב שמעון בן צמח דוראן מצפון אפריקה, בן המאה ה-15, הכוללות גם מכתבים בתחומי המתמטיקה, ההיסטוריה והדקדוק.",
+    "pubDate": "1739",
+    "compDate": "1414",
+    "compPlace": "Algiers",
+    "pubPlace": "Amsterdam",
+    "errorMargin": "30",
+    "era": "RI",
+    "heTitle": "ספר התשב\"ץ",
+    "titleVariants": [
+        "Sefer HaTashbetz"
+    ],
+    "heTitleVariants": [
+        "ספר התשב\"ץ"
+    ],
+    "heCategories": [
+        "שו\"ת",
+        "ראשונים"
+    ],
+    "compDateString": {
+        "en": " (c.1384  - c.1444 CE)",
+        "he": " (1384 - 1444 לספירה בקירוב)"
+    },
+    "compPlaceString": {
+        "en": "Algiers",
+        "he": "אלג'יר"
+    }
+}
