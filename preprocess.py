@@ -6,7 +6,7 @@ import numpy as np
 import tables
 import tensorflow as tf
 import os
-from utils import flatten, str2onehot, text_example
+from utils import flatten, str2onehot, text_example, split_and_pad_strings
 import io
 
 
@@ -19,7 +19,7 @@ import io
 # https://www.tensorflow.org/guide/data
 # https://www.tensorflow.org/guide/data_performance
 # https://www.tensorflow.org/tutorials/load_data/tfrecord
-def organize_data(dataset_dirname = "./sample_dataset/"):
+def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת \'\n"'):
     """ 
     Organize dataset in convenient folder structure and keep only relevant files in convenient form. 
     Existing data is overwritten.
@@ -60,6 +60,7 @@ def organize_data(dataset_dirname = "./sample_dataset/"):
             # print("Book '" + filename +"' has no valid author information")
             error_count+=1
         authors_dict[bookname] = author
+    # print(authors_dict)
     print(str(error_count) + ' books out of '+ str(len(os.listdir(metadata_dir))) +' without valid author information were corrected. ')
 
     #get list of all directories in raw folder
@@ -67,6 +68,9 @@ def organize_data(dataset_dirname = "./sample_dataset/"):
     #remove metadata directory from list
     books.remove(raw_metadata_subdirame.replace('/', ''))
     books.remove('_links')
+    vowels_pattern = re.compile(r'[\u05B0-\u05BD\u05BF\u05C1\u05C2\u05C7]')
+    quotation_marks = re.compile("[“”״]")
+    apostrophe_marks = re.compile("[‘’׳]")
     #organize books
     for book in books:
         book_path = pathlib.Path(dataset_dirname + raw_subdirname+book+'/Hebrew/merged.json')
@@ -95,33 +99,52 @@ def organize_data(dataset_dirname = "./sample_dataset/"):
                     continue
 
             # flatten
-            if isinstance(book_raw_text, list):  # no internal separation of text
-                flattened_raw_lst = list(flatten(book_raw_text))
-            elif isinstance(book_raw_text, dict):# internal separation of text - dict of dicts
-                tmp = []
-                for d in book_raw_text.values():
-                    if isinstance(d, dict):
-                        tmp.extend(list(d.values()))
-                    elif isinstance(d, list):
-                        tmp.extend(d)
-                flattened_raw_lst = list(flatten(tmp))
+            if isinstance(book_raw_text, list) or isinstance(book_raw_text, dict):  # no internal separation of text
+                flattened_raw_lst = flatten(book_raw_text)
+            # elif isinstance(book_raw_text, dict):# internal separation of text - dict of dicts
+            #     tmp = []
+            #     for d in book_raw_text.values():
+            #         if isinstance(d, dict):
+            #             tmp.extend(list(d.values()))
+            #         elif isinstance(d, list):
+            #             tmp.extend(d)
+            #     flattened_raw_lst = list(flatten(tmp))
             else:
                 raise ValueError(str(book_path)+ ': Could not parse.')
-
+            
             # ensure file does not have different structure from expected
-            assert(all(isinstance(x, str) for x in flattened_raw_lst))
+            
+            # print(get_nested_type(flattened_raw_lst))
+            assert all(isinstance(x, str) for x in flattened_raw_lst)#, get_nested_type(flattened_raw_lst)
             # TODO: check manually all is well
 
             # concatenate
-            flattened_raw_str = ''.join(flattened_raw_lst)
+            flattened_raw_str = '\n'.join(flattened_raw_lst)
 
+            flattened_raw_str = re.sub(vowels_pattern, '', flattened_raw_str)
+            flattened_raw_str = re.sub(quotation_marks, '"', flattened_raw_str)
+            flattened_raw_str = re.sub(apostrophe_marks, "'", flattened_raw_str)
+
+
+            new_str = re.sub('[\t ]+', ' ', flattened_raw_str)
+            new_str = re.sub('<[^<]+?>', '', new_str)
+            new_str = re.sub(r'\([^)]*\)|\[[^]]*\]', '', new_str)
+            # new_str = re.sub(r'[-—\?\.,׃:;!*#&a-zA-Z0-9…$%¨]', '', new_str)
+            new_str = re.sub(r'[\u05D0-\u05EA\u05F0-\u05F4]\)|\(', '', new_str) #
+            new_str = re.sub('[^'+alphabet+']', '', new_str)
+
+            if len(new_str) < 10:
+                print("Could not remove HTML in", out_file)
+            else: 
+                flattened_raw_str = new_str
+            
             #write to file
             with io.open(out_file, 'w', encoding='utf8') as f:
                 f.write(flattened_raw_str)
 
 #generator function (including preprocessing -> NumPy arrays)
 #TODO: consider making preprocessing after generation. For now most compatible
-def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "'):
+def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"'):
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
@@ -137,42 +160,16 @@ def make_samples(input_size, alphabet, book_path):
     with book_path.open(mode    ='r', encoding='utf8') as book_file:
         flattened_raw_str = book_file.read()
 
-            #split by paragraph
-            # samples = flattened_raw_str.split("\n")
+    #split by paragraph
+    samples = split_and_pad_strings(flattened_raw_str.split("\n"), input_size)
 
-            # keep only letters in alphabet and remove multiple spaces
-    filtered = re.sub('[^'+alphabet+']', '', flattened_raw_str)
-    filtered = re.sub(' +', ' ', filtered)
-            # TODO: is it always correct to replace out-of-alphabet characters by spaces?
-
-            # split to samples
-            #TODO: prevent cutting in the middle of words
-    n = input_size
-    samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
-
-            # extras = []
-            # for i in range(len(samples)):
-            #     filtered = re.sub('[^'+alphabet+']', ' ', samples[i])
-            #     samples[i] = re.sub(' +', ' ', filtered)
-            #     if len(samples[i]) > input_size:
-            #         split_up = [samples[i][i:i+input_size] for i in range(0, len(samples[i]), input_size)]
-            #         samples[i] = split_up[0]
-            #         extras.extend(split_up[1:])
-
-            # samples.extend(extras)
-
-            #convert to numerical one-hot
-            #TODO: consider convert to sparse representation
-    samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet) for sample in samples[0:-1]], axis=0)
-            #pad last sample and add it to 3d array
-    lastsample_onehot = str2onehot(samples[-1], alphabet)
-    lastsample_onehot_padded = np.zeros_like(samples_onehot_minus1[-1,:,:], dtype=np.int8)
-    lastsample_onehot_padded[0:lastsample_onehot.shape[0], 0:lastsample_onehot.shape[1]] = lastsample_onehot
-    samples_onehot = np.concatenate((samples_onehot_minus1, lastsample_onehot_padded[np.newaxis,:,:]))
+    #convert to numerical one-hot
+    #TODO: consider convert to sparse representation
+    samples_onehot = np.stack([str2onehot(sample, alphabet, input_size) for sample in samples], axis=0)
     return samples_onehot
 
 
-def parse_dataset(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "'):
+def parse_dataset(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"'):
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
@@ -191,8 +188,7 @@ def parse_dataset(dataset_directory = "./raw_dataset/Rishonim/organized", input_
     return examples, labels
 
 
-
-def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת "', output_filename='./sample_dataset/sample_dataset'):
+def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"', output_filename='./sample_dataset/sample_dataset'):
     """ 
     Gets dataset directory path (which has structure as detailed behind TODO), and writes to file data as numeric NumPy ndarray in HDF5 file and TFrecord file.
 
@@ -267,7 +263,6 @@ def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדה
 
                 # keep only letters in alphabet and remove multiple spaces
                 filtered = re.sub('[^'+alphabet+']', ' ', flattened_raw_str)
-                filtered = re.sub(' +', ' ', filtered)
                 # TODO: is it always correct to replace out-of-alphabet characters by spaces?
 
                 # split to samples
@@ -276,9 +271,9 @@ def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדה
                 samples = [filtered[i:i+n] for i in range(0, len(filtered), n)]
 
                 #convert to numerical one-hot
-                samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet) for sample in samples[0:-1]], axis=0)
+                samples_onehot_minus1 = np.stack([str2onehot(sample, alphabet, input_size) for sample in samples[0:-1]], axis=0)
                 #pad last sample and add it to 3d array
-                lastsample_onehot = str2onehot(samples[-1], alphabet)
+                lastsample_onehot = str2onehot(samples[-1], alphabet, input_size)
                 lastsample_onehot_padded = np.zeros_like(samples_onehot_minus1[-1,:,:], dtype=np.int8)
                 lastsample_onehot_padded[0:lastsample_onehot.shape[0], 0:lastsample_onehot.shape[1]] = lastsample_onehot
                 samples_onehot = np.concatenate((samples_onehot_minus1, lastsample_onehot_padded[np.newaxis,:,:]))
@@ -293,10 +288,6 @@ def preprocess_all_data(dataset_directory, input_size=1024, alphabet='אבגדה
             h5file.flush()
             tfwriter.flush()
 
-
-# organize_data() #DEBUG
-
-# preprocess_data('./sample_dataset/organized') #DEBUG!
 
 def move_books_to_main(main_dir="/Users/nathan/Library/CloudStorage/Dropbox/_School/College/10_-_Masters_Spring/COS485/Final Project/RambaNet/raw_dataset"):
     import shutil
@@ -336,4 +327,67 @@ def linebreaks_at_colons_and_breakup_html(organized_folder):
             file.write('\n'.join(filedata))
 
 
-    
+def remove_incorrect_authorship(starting_dir):
+    REMOVE = ['Rashi on Taanit.txt', 'Rashi on Nedarim.txt', 'Rashi on Nazir.txt', 'Rashi on Horayot.txt', "Nuschaot Ktav Yad"]
+    for name in REMOVE:
+        for root, dirs, files in os.walk(starting_dir):
+            for file in files:
+                if file.endswith(name):
+                    p = os.path.join(root, file)
+                    print("removing", p)
+                    os.remove(p)
+            for dir in dirs:
+                if dir.endswith(name):
+                    p = os.path.join(root, dir)
+                    print("removing", p)
+                    shutil.rmtree(p)
+
+def move_maschetot_to_talmud(starting_dir):
+    # List of strings to match with directory names
+    match_list = [ 'Berakhot', 'Shabbat', 'Eruvin', 'Pesachim', 'Shekalim', 'Yoma', 'Sukkah', 'Beitzah', 'Rosh Hashanah', 'Taanit', 'Megillah', 'Moed Katan', 'Chagigah', 'Yevamot', 'Ketubot', 'Nedarim', 'Nazir', 'Sotah', 'Gittin', 'Kiddushin', 'Bava Kamma', 'Bava Metzia', 'Bava Batra', 'Sanhedrin', 'Makkot', 'Shevuot', 'Avodah Zarah', 'Horayot', 'Zevachim', 'Menachot', 'Chullin', 'Bekhorot', 'Arakhin', 'Temurah', 'Keritot', 'Meilah', 'Niddah', 'Tamid', 'Negaim', 'Niddah']
+
+    # Destination directory where matched files will be moved
+    destination_dir = "Talmud"
+
+    move_files_from_dir(starting_dir, match_list, destination_dir)
+
+
+def move_files_from_dir(starting_dir, match_list, destination_dir):
+    dest_dir = os.path.join(starting_dir, destination_dir)
+
+    # Loop over subdirectories in the source directory
+    for subdir in os.listdir(starting_dir):
+        # Check if subdirectory name matches with any string in the match list
+        if any(x in subdir for x in match_list):
+            # Full path of the subdirectory
+            subdir_path = os.path.join(starting_dir, subdir)
+            # Loop over files in the subdirectory
+            for file in os.listdir(subdir_path):
+                # Full path of the file
+                file_path = os.path.join(subdir_path, file)
+                # Check if it is a file and not a subdirectory
+                if os.path.isfile(file_path):
+                    # Move the file to the destination directory
+                    shutil.move(file_path, dest_dir)
+            os.rmdir(subdir_path)
+
+
+def delete_DS_STORE(starting_dir):
+    for root, dirs, files in os.walk(starting_dir):
+        for file in files:
+            if file == '.DS_Store':
+                os.remove(os.path.join(root, file))
+
+
+def do_it_all(starting_dir="./raw_dataset/Talmud/"):
+    organized_path = os.path.join(starting_dir, "organized")
+    shutil.rmtree(organized_path)
+    delete_DS_STORE(starting_dir)
+    organize_data(starting_dir)
+    inside_talmud_dir = os.path.join(organized_path, "Talmud")
+    if os.path.exists(inside_talmud_dir):
+        shutil.rmtree(inside_talmud_dir)
+    os.mkdir(inside_talmud_dir)
+    remove_incorrect_authorship(organized_path)
+    move_maschetot_to_talmud(organized_path)
+    move_files_from_dir(organized_path, ["Hilkhot HaRamban"], "Ramban")

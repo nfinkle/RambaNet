@@ -2,18 +2,24 @@ from tensorflow import keras
 # from keras import layers
 from preprocess import get_sample
 import tensorflow as tf
+import matplotlib.pyplot as plt
+import os
 
-OUTPUTS = 15
+OUTPUTS = len(os.listdir("./raw_dataset/Talmud/organized"))
+INPUT_SIZE = 1024
+ALPHABET = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת "\''
 
-ds_sefaria = tf.data.Dataset.from_generator(get_sample, args=[], output_types=(tf.int8, tf.int8), output_shapes = ( [29, 1024], [OUTPUTS] ) )
+ds_sefaria = tf.data.Dataset.from_generator(lambda: get_sample(input_size=INPUT_SIZE, alphabet=ALPHABET, dataset_directory = "./raw_dataset/Talmud/organized"), args=[], output_types=(tf.int8, tf.int8), output_shapes = ( [INPUT_SIZE, len(ALPHABET)], [OUTPUTS] ) )
 #TODO: shapes and arguments should be parametric
 # print(len(list(ds_sefaria)))
 
-inputs = keras.Input(shape=(29, 1024), name='characters')
+# inputs = keras.Input(shape=(29, 1024), name='characters')
+inputs = keras.Input(shape=(INPUT_SIZE, len(ALPHABET)), name='characters')
 x = keras.layers.Flatten()(inputs) 
 x = keras.layers.Dense(64, activation='relu', name='dense_1')(x)
 x = keras.layers.Dense(64, activation='relu', name='dense_2')(x)
-outputs = keras.layers.Dense(OUTPUTS, name='predictions')(x)
+x = keras.layers.Dense(OUTPUTS, name='predictions')(x)
+outputs = keras.layers.Softmax(name='softmax')(x)
 
 model = keras.Model(inputs=inputs, outputs=outputs)
 
@@ -23,7 +29,7 @@ val_size = int(0.15 * DATASET_SIZE)
 test_size = int(0.15 * DATASET_SIZE)
 
 
-model.compile(optimizer=keras.optimizers.RMSprop(),  # Optimizer
+model.compile(optimizer=keras.optimizers.AdamW(),  # Optimizer
               # Loss function to minimize
               loss='categorical_crossentropy',
               # List of metrics to monitor
@@ -42,7 +48,23 @@ train_dataset = train_dataset.batch(64)
 test_dataset = test_dataset.batch(64)
 val_dataset = val_dataset.batch(64)
 
-model.fit(train_dataset, epochs=3)
+output = model.fit(train_dataset, validation_data=val_dataset, validation_freq=4, epochs=16)
+
+test_predicted_labels = model.predict(test_dataset)
+true_labels = []
+for batch_of_examples, batch_of_true_labels in test_dataset:
+  true_labels.append(batch_of_true_labels)
+
+test_true_labels = tf.argmax(tf.concat(true_labels, axis=0), axis=1)
+
+print(test_true_labels, tf.argmax(test_predicted_labels,axis=1))
+plt.imshow(tf.math.confusion_matrix(
+    test_true_labels,
+    tf.argmax(test_predicted_labels,axis=1),
+    num_classes=OUTPUTS,
+))
+
 print('\n# Evaluate')
 result = model.evaluate(test_dataset)
-dict(zip(model.metrics_names, result))
+print(result)
+# dict(zip(model.metrics_names, result))

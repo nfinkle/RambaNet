@@ -4,21 +4,43 @@ import numpy as np
 
 # flatten list/dict of string
 def flatten(l):
-    for el in l:
-        if isinstance(el, collections.abc.Iterable) and not isinstance(el, (str, bytes)):
-            yield from flatten(el)
+    flattened_list = []
+    if isinstance(l, list):
+        for element in l:
+            flattened_list.extend(flatten(element))
+    elif isinstance(l, dict):
+        for v in l.values():
+            flattened_list.extend(flatten(v))
+    elif isinstance(l, str):
+        flattened_list.append(l)
+    else:
+        print("Could not flatten", l, type(l))
+    return flattened_list
+
+
+def split_and_pad_strings(string_list, max_length):
+    new_list = []
+    for string in string_list:
+        string_length = len(string)
+        if string_length > max_length:
+            for i in range(0, string_length, max_length):
+                substring = string[i:i+max_length]
+                new_list.append(substring)
         else:
-            yield el
+            new_list.append(string)
+    return new_list
+
+
 
 #convert string to one-hot numerical embedding
-def str2onehot(sample, alphabet):  # idxs is list of integers
+def str2onehot(sample, alphabet, max_length):  # idxs is list of integers
     #return numpy 2D array where each character is a one-hot column vector
     #convert to indexes
     idxs = [alphabet.index(c) for c in sample]
     #convert to one-hot
     idxs_arr = np.array(idxs, dtype=int)
     length = len(alphabet)
-    b = np.zeros((idxs_arr.size, length))
+    b = np.zeros((max_length, length))
     b[np.arange(idxs_arr.size), idxs_arr] = 1
     return b.astype(np.int8)
 
