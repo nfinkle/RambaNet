@@ -155,11 +155,13 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
 
 #generator function (including preprocessing -> NumPy arrays)
 #TODO: consider making preprocessing after generation. For now most compatible
-def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"', min_ratio=0.5):
+def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"', min_ratio=0.5, to_tensorflow=True):
     alphabet = '_' + alphabet
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
+    if to_tensorflow:
+        one_hot_matrix = tf.constant(one_hot_matrix)
     authors_not_to_cut = {'Talmud'}
     for author_id, author_dir in authors:
         author = os.path.basename(author_dir)
@@ -167,6 +169,8 @@ def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_siz
         print(author, author_min_ratio)
         for book_path in author_dir.iterdir():
             samples_onehot = make_samples(input_size, alphabet, book_path, author_min_ratio)
+            if to_tensorflow:
+                samples_onehot = tf.constant(samples_onehot, dtype=tf.int8)
             author_label = one_hot_matrix[:,author_id]
             for sample in samples_onehot:
                 yield (sample, author_label)

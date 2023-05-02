@@ -6,15 +6,23 @@ import matplotlib.pyplot as plt
 import os
 
 OUTPUTS = len(os.listdir("./raw_dataset/Talmud/organized"))
-INPUT_SIZE = 1024
+INPUT_SIZE = 256
+MIN_RATIO = 0.65
 ALPHABET = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת "\''
+ONE_HOT_LEN = len(ALPHABET) + 1
 
-ds_sefaria = tf.data.Dataset.from_generator(lambda: get_sample(input_size=INPUT_SIZE, alphabet=ALPHABET, dataset_directory = "./raw_dataset/Talmud/organized"), args=[], output_types=(tf.int8, tf.int8), output_shapes = ( [INPUT_SIZE, len(ALPHABET)], [OUTPUTS] ) )
+ds_sefaria = tf.data.Dataset.from_generator(lambda: get_sample(input_size=INPUT_SIZE, alphabet=ALPHABET, dataset_directory = "./raw_dataset/Talmud/organized", min_ratio=MIN_RATIO), args=(), output_types=(tf.int8, tf.int8), output_shapes = ( [INPUT_SIZE, ONE_HOT_LEN], [OUTPUTS] ) )
+ds_sefaria = ds_sefaria.cache()
+counts = [0] * OUTPUTS
+for _, label in ds_sefaria:
+  o = int(tf.argmax(label).numpy())
+  counts[o] += 1
+DATASET_SIZE = sum(counts)
 #TODO: shapes and arguments should be parametric
 # print(len(list(ds_sefaria)))
 
 # inputs = keras.Input(shape=(29, 1024), name='characters')
-inputs = keras.Input(shape=(INPUT_SIZE, len(ALPHABET)), name='characters')
+inputs = keras.Input(shape=(INPUT_SIZE, ONE_HOT_LEN), name='characters')
 x = keras.layers.Flatten()(inputs) 
 x = keras.layers.Dense(64, activation='relu', name='dense_1')(x)
 x = keras.layers.Dense(64, activation='relu', name='dense_2')(x)
@@ -23,11 +31,9 @@ outputs = keras.layers.Softmax(name='softmax')(x)
 
 model = keras.Model(inputs=inputs, outputs=outputs)
 
-DATASET_SIZE = len(list(ds_sefaria))
 train_size = int(0.7 * DATASET_SIZE)
 val_size = int(0.15 * DATASET_SIZE)
 test_size = int(0.15 * DATASET_SIZE)
-
 
 model.compile(optimizer=keras.optimizers.AdamW(),  # Optimizer
               # Loss function to minimize
