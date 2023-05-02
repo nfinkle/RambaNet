@@ -149,20 +149,23 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
 
 #generator function (including preprocessing -> NumPy arrays)
 #TODO: consider making preprocessing after generation. For now most compatible
-def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"'):
+def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"', min_ratio=0.5):
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
+    authors_not_to_cut = {'Talmud'}
     for author_id, author_dir in authors:
-        print(author_dir)
+        author = os.path.basename(author_dir)
+        author_min_ratio = None if author in authors_not_to_cut else min_ratio
+        print(author, author_min_ratio)
         for book_path in author_dir.iterdir():
-            samples_onehot = make_samples(input_size, alphabet, book_path)
+            samples_onehot = make_samples(input_size, alphabet, book_path, author_min_ratio)
             author_label = one_hot_matrix[:,author_id]
             for sample in samples_onehot:
                 yield (sample, author_label)
 
-def make_samples(input_size, alphabet, book_path):
-    with book_path.open(mode    ='r', encoding='utf8') as book_file:
+def make_samples(input_size, alphabet, book_path, min_ratio):
+    with book_path.open(mode ='r', encoding='utf8') as book_file:
         flattened_raw_str = book_file.read()
 
     #split by paragraph
@@ -171,7 +174,12 @@ def make_samples(input_size, alphabet, book_path):
         string_length = len(string)
         new_list += [string[i:i+input_size] for i in range(0, string_length, input_size)]
         new_list.append(string[-(string_length % input_size or input_size):])
-    new_list = list(filter(None, new_list))
+
+    fn = None
+    if min_ratio:
+        min_length = int(input_size * min_ratio)
+        fn = lambda x: len(x.strip()) >= min_length
+    new_list = list(filter(fn, new_list))
 
     samples_onehot = np.zeros((len(new_list), input_size, len(alphabet)), dtype=np.int8)
     for i, sample in enumerate(new_list):
