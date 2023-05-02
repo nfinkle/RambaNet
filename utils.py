@@ -22,13 +22,10 @@ def split_and_pad_strings(string_list, max_length):
     new_list = []
     for string in string_list:
         string_length = len(string)
-        if string_length > max_length:
-            for i in range(0, string_length, max_length):
-                substring = string[i:i+max_length]
-                new_list.append(substring)
-        else:
-            new_list.append(string)
-    return new_list
+        new_list += ([string[i:i+max_length] for i in range(0, string_length, max_length)])
+        new_list.append(string[:-(string_length % max_length)])
+    return list(filter(None, new_list))
+
 
 
 
@@ -39,10 +36,9 @@ def str2onehot(sample, alphabet, max_length):  # idxs is list of integers
     idxs = [alphabet.index(c) for c in sample]
     #convert to one-hot
     idxs_arr = np.array(idxs, dtype=int)
-    length = len(alphabet)
-    b = np.zeros((max_length, length))
+    b = np.zeros((max_length, len(alphabet)), dtype=np.int8)
     b[np.arange(idxs_arr.size), idxs_arr] = 1
-    return b.astype(np.int8)
+    return b
 
 ## Functions to write/read to/from TFrecord files ##
 def text_example(text, label):

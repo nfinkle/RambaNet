@@ -6,9 +6,9 @@ import numpy as np
 import tables
 import tensorflow as tf
 import os
-from utils import flatten, str2onehot, text_example, split_and_pad_strings
+from utils import flatten, str2onehot, text_example
 import io
-
+import textwrap
 
 #Organize dataset
 #TODO: consider write to TFRecord file
@@ -161,11 +161,22 @@ def make_samples(input_size, alphabet, book_path):
         flattened_raw_str = book_file.read()
 
     #split by paragraph
-    samples = split_and_pad_strings(flattened_raw_str.split("\n"), input_size)
+    samples = preprocess_strings(flattened_raw_str.split("\n"), alphabet, input_size)
+    return samples
 
-    #convert to numerical one-hot
-    #TODO: consider convert to sparse representation
-    samples_onehot = np.stack([str2onehot(sample, alphabet, input_size) for sample in samples], axis=0)
+def preprocess_strings(string_list, alphabet, max_length):
+    new_list = []
+    for string in string_list:
+        string_length = len(string)
+        new_list += [string[i:i+max_length] for i in range(0, string_length, max_length)]
+        new_list.append(string[-(string_length % max_length or max_length):])
+    new_list = list(filter(None, new_list))
+
+    samples_onehot = np.zeros((len(new_list), max_length, len(alphabet)), dtype=np.int8)
+    for i, sample in enumerate(new_list):
+        idxs = np.array([alphabet.index(c) for c in sample], dtype=int)
+        samples_onehot[i, np.arange(idxs.size), idxs] = 1
+
     return samples_onehot
 
 
