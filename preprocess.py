@@ -71,12 +71,15 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
     vowels_pattern = re.compile(r'[\u05B0-\u05BD\u05BF\u05C1\u05C2\u05C7]')
     quotation_marks = re.compile("[“”״]")
     apostrophe_marks = re.compile("[‘’׳]")
-    space_pattern = re.compile('[\t ]+')
+    space_pattern = re.compile(r'[^\S\n]{2,}')
+    html_tags_to_remove = re.compile(r'<(\/)?(b|big|strong|br)>|<br\/>')
     html_pattern = re.compile('<[^<]+?>')
     parentheses_pattern = re.compile(r'\([^)]*\)|\[[^]]*\]')
-    hebrew_note_pattern = re.compile(r'[\u05D0-\u05EA\u05F0-\u05F4]\)|\(')
+    # hebrew_note_pattern = re.compile(r'[\u05D0-\u05EA\u05F0-\u05F4]\)|\(')
     alphabet_pattern = re.compile('[^'+alphabet+']')
     consecutive_apostrophes = re.compile(r"('{2})+")
+    new_line_pattern = re.compile(r'\n{2,}')
+
     #organize books
     for book in books:
         book_path = pathlib.Path(dataset_dirname + raw_subdirname+book+'/Hebrew/merged.json')
@@ -132,13 +135,14 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
             flattened_raw_str = re.sub(apostrophe_marks, "'", flattened_raw_str)
             flattened_raw_str = re.sub(consecutive_apostrophes, '"', flattened_raw_str)
 
-
-            new_str = re.sub(space_pattern, ' ', flattened_raw_str)
+            new_str = re.sub(html_tags_to_remove, '', flattened_raw_str)
             new_str = re.sub(html_pattern, '', new_str)
             new_str = re.sub(parentheses_pattern, '', new_str)
             # new_str = re.sub(r'[-—\?\.,׃:;!*#&a-zA-Z0-9…$%¨]', '', new_str)
-            new_str = re.sub(hebrew_note_pattern, '', new_str) #
+            # new_str = re.sub(hebrew_note_pattern, '', new_str) #
             new_str = re.sub(alphabet_pattern, '', new_str)
+            new_str = re.sub(new_line_pattern, '\n', new_str)
+            new_str = re.sub(space_pattern, ' ', new_str)
 
             if len(new_str) < 10:
                 print("Could not remove HTML in", out_file)
