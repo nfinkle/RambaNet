@@ -76,6 +76,7 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
     parentheses_pattern = re.compile(r'\([^)]*\)|\[[^]]*\]')
     hebrew_note_pattern = re.compile(r'[\u05D0-\u05EA\u05F0-\u05F4]\)|\(')
     alphabet_pattern = re.compile('[^'+alphabet+']')
+    consecutive_apostrophes = re.compile(r"('{2})+")
     #organize books
     for book in books:
         book_path = pathlib.Path(dataset_dirname + raw_subdirname+book+'/Hebrew/merged.json')
@@ -129,6 +130,7 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
             flattened_raw_str = re.sub(vowels_pattern, '', flattened_raw_str)
             flattened_raw_str = re.sub(quotation_marks, '"', flattened_raw_str)
             flattened_raw_str = re.sub(apostrophe_marks, "'", flattened_raw_str)
+            flattened_raw_str = re.sub(consecutive_apostrophes, '"', flattened_raw_str)
 
 
             new_str = re.sub(space_pattern, ' ', flattened_raw_str)
@@ -150,6 +152,7 @@ def organize_data(dataset_dirname = "./sample_dataset/", alphabet = 'אבגדה�
 #generator function (including preprocessing -> NumPy arrays)
 #TODO: consider making preprocessing after generation. For now most compatible
 def get_sample(dataset_directory = "./raw_dataset/Rishonim/organized", input_size=1024, alphabet='אבגדהוזחטיכךלמםנןסעפףצץקרשת \'"', min_ratio=0.5):
+    alphabet = '_' + alphabet
     ds_path = pathlib.Path(dataset_directory)
     authors = list(enumerate(ds_path.iterdir()))
     one_hot_matrix = np.eye(len(authors), dtype='int8')
@@ -175,11 +178,11 @@ def make_samples(input_size, alphabet, book_path, min_ratio):
         new_list += [string[i:i+input_size] for i in range(0, string_length, input_size)]
         new_list.append(string[-(string_length % input_size or input_size):])
 
-    fn = None
     if min_ratio:
         min_length = int(input_size * min_ratio)
-        fn = lambda x: len(x.strip()) >= min_length
-    new_list = list(filter(fn, new_list))
+        new_list = list(filter(lambda x: len(x.strip()) >= min_length, new_list))
+    else:
+        new_list = list(filter(lambda x: x.strip(), new_list))
 
     samples_onehot = np.zeros((len(new_list), input_size, len(alphabet)), dtype=np.int8)
     for i, sample in enumerate(new_list):
