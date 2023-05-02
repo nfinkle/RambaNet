@@ -166,18 +166,14 @@ def make_samples(input_size, alphabet, book_path):
         flattened_raw_str = book_file.read()
 
     #split by paragraph
-    samples = preprocess_strings(flattened_raw_str.split("\n"), alphabet, input_size)
-    return samples
-
-def preprocess_strings(string_list, alphabet, max_length):
     new_list = []
-    for string in string_list:
+    for string in flattened_raw_str.split("\n"):
         string_length = len(string)
-        new_list += [string[i:i+max_length] for i in range(0, string_length, max_length)]
-        new_list.append(string[-(string_length % max_length or max_length):])
+        new_list += [string[i:i+input_size] for i in range(0, string_length, input_size)]
+        new_list.append(string[-(string_length % input_size or input_size):])
     new_list = list(filter(None, new_list))
 
-    samples_onehot = np.zeros((len(new_list), max_length, len(alphabet)), dtype=np.int8)
+    samples_onehot = np.zeros((len(new_list), input_size, len(alphabet)), dtype=np.int8)
     for i, sample in enumerate(new_list):
         idxs = np.array([alphabet.index(c) for c in sample], dtype=int)
         samples_onehot[i, np.arange(idxs.size), idxs] = 1
