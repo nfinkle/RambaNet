@@ -9,8 +9,9 @@ __pycache__
 __pycache__/*
 
 raw_dataset/*
-!raw_dataset/_PUT_HERE_DATASET_
-!raw_dataset/Talmud/organize
+!raw_dataset/Talmud
+raw_dataset/Talmud/*
+!raw_dataset/Talmud/organized
 
 sample_dataset/*.h5
 sample_dataset/*.tfrecords
