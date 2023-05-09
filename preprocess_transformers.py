@@ -8,7 +8,7 @@ import glob
 
 def get_sample(tokenizer, dataset_directory = "./raw_dataset/Talmud/organized", input_size=1024, min_ratio=0.5, PAD_ID=0, authors_not_to_cut=['Talmud']):
     ds_path = pathlib.Path(dataset_directory)
-    authors = list(enumerate(ds_path.iterdir()))
+    authors = sorted(list(enumerate(ds_path.iterdir())))
     for author_id, author_dir in authors:
         author = os.path.basename(author_dir)
         author_min_ratio = None if author in authors_not_to_cut else min_ratio
